@@ -185,17 +185,122 @@ onMounted(() => {
 </script>
 <template>
   <div class="container">
-    <section id="section1">Section 1</section>
-    <section id="section2"><p data-aos="fade-up">Section 2</p></section>
+    <section id="section1" class="bg-secondry flex large:flex-col">
+      <div
+        class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
+      ></div>
+      <div
+        class="w-[60%] text-white flex flex-col z-20 mt-[220px] large:w-[100%]"
+      >
+        <p class="text-[85px] font-bold text-center large:text-[60px]">
+          داده پردازان
+          <br />
+          پارسیان نامی
+        </p>
+        <div
+          class="flex justify-between px-[20%] h-[70px] mt-[46px] large:px-9"
+        >
+          <div>
+            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              شناسه ملی
+            </p>
+            <br />
+            <p
+              class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
+            >
+              14006683500
+            </p>
+          </div>
+          <div>
+            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              شماره ثبت
+            </p>
+            <br />
+            <p
+              class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
+            >
+              12047
+            </p>
+          </div>
+          <div>
+            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              مدیرعامل
+            </p>
+            <br />
+            <p class="text-[32px] relative bottom-[26px] large:text-[18px]">
+              فاطمه فتحی
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-end flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[37px] mb-6"
+      >
+        <img src="/imgs/logo.png" alt="" class="w-[320px] large:w-[250px]" />
+        <p
+          class="text-[55px] text-center relative bottom-7"
+          style="font-family: poppins"
+        >
+          Modern Data
+        </p>
+      </div>
+    </section>
+    <section id="section2" class="flex">
+      <div class="w-[40%] flex">
+        <div class="w-[28%] bg-main h-[100%]"></div>
+        <div class="bg-secondry text-white">
+          <p>خدمات ما</p>
+          <p>
+            شرکت ما با نام داده پردازان پارسیان نامی (مدرن دیتا) در سال 1396
+            تأسیس گردیده است. ما با تکیه بر تجربه و تخصصی که در این حوزه بدست
+            آورده‌ایم، تلاش می‌کنیم تا بهترین و جذاب‌ترین راهکارهای نرم‌افزاری
+            را برای مشتریان خود ارائه دهیم. تیم ما از افرادی با استعداد و متخصص
+            تشکیل شده است که در تمامی مراحل تولید، از طراحی تا پیاده‌سازی، با
+            انگیزه بالا و بهبود پایدار به کار می‌پردازند. ما به ارائه راهکارهای
+            نوآورانه، قابلیت های کاربردی و طراحی بصری جذاب در اپلیکیشن‌ها و
+            بازی‌های موبایلی خود متعهد هستیم. از زمان تأسیس، شرکت ما در زمینه
+            طراحی و تولید اپلیکیشن‌ها و بازی‌های موبایلی به ارائه خدمات به
+            مشتریان در داخل و خارج از کشور می‌پرداخته است. ما افتخار می کنیم که
+            با همکاری با شرکت‌ها و سازمان‌های مختلف، نیازهای نرم‌افزاری آن‌ها را
+            برآورده نموده و به بهبود عملکرد و رشد کسب و کار آن‌ها کمک کرده‌ایم.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <p>هوش مصنوعی</p>
+            <p>استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر</p>
+          </div>
+          <div>
+            <p>بازی سازی</p>
+            <p>
+              استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از
+              جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر
+            </p>
+          </div>
+          <div>
+            <p>طراحی UI/UX</p>
+            <p>
+              استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها و
+              وب سایت ها
+            </p>
+          </div>
+          <div>
+            <p>پشتیبانی و بروزرسانی</p>
+            <p>پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="section3" class="bg-black">
       <carousel
-        :autoplay="2000"
         :items-to-show="1"
-        class="w-[100%] mx-auto block"
+        class="w-[92%] mx-auto block"
         :wrap-around="true"
       >
         <slide
-          class="flex flex-col max-w-[92%] !mx-[4%] [direction:rtl]"
+          class="flex flex-col !w-[98%] !mx-[1%] [direction:rtl]"
           v-for="item in crasoulData"
         >
           <div
@@ -215,7 +320,7 @@ onMounted(() => {
               </ul>
             </div>
             <div
-              class="bg-white relative w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:absolute before:w-[100%] before:h-[100%] before:-top-[5px] before:-left-[8px] before:border-2 before:border-white before:rounded-3xl *:z-[100] tablet:w-[100%] tablet:mt-[50px]"
+              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] tablet:w-[100%] tablet:mt-[50px] before"
             >
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />
@@ -265,7 +370,7 @@ onMounted(() => {
               </div>
             </div>
             <div
-              class="relative w-[55%] h-[100%] rounded-3xl before:absolute before:w-[100%] before:h-[100%] before:-bottom-[2px] before:-right-[4px] before:bg-white before:rounded-3xl before:z-[-1] tablet:w-[100%] tablet:mt-[30px]"
+              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] tablet:w-[100%] tablet:mt-[30px]"
             >
               <img
                 src="/imgs/crasoul-banner.png"
@@ -275,7 +380,8 @@ onMounted(() => {
             </div>
           </div>
         </slide>
-        <template #addons style="direction: ltr">
+        <template #addons style="direction: ltr" class="bold">
+          <Navigation />
           <pagination />
         </template>
       </carousel>
@@ -284,15 +390,34 @@ onMounted(() => {
   </div>
 </template>
 <style>
+* {
+  @apply !max-w-[100vw];
+}
+@font-face {
+  font-family: poppins;
+  src: url(/font/Poppins-Bold.ttf) format(truetype);
+}
 @font-face {
   font-family: shabnam;
   src: url(/font/shabnam-FD.ttf) format(truetype);
 }
 body {
-  @apply [direction:rtl] m-0 p-0 overflow-hidden;
+  @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];
   font-family: shabnam;
 }
 section {
-  @apply w-[100vw] h-[100vh] flex tablet:h-auto;
+  @apply max-w-[100%] overflow-hidden h-[100vh] flex large:h-auto large:min-h-[100vh];
+}
+.before {
+  @apply before:border-white before:rounded-3xl before:border-2 relative before:absolute before:w-[100%] before:h-[100%];
+}
+.carousel__icon {
+  @apply fill-main scale-[1.5] relative transition-all hover:scale-[2];
+}
+.carousel__prev .carousel__icon {
+  @apply left-5;
+}
+.carousel__next .carousel__icon {
+  @apply right-5;
 }
 </style>

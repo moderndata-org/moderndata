@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        main: "#FFBF00"
+        main: "#FFBF00",
+        secondry: "#141516"
       },
       screens: {
         tablet: {max: "768px"},
-        mobile: {max: "500px"}
+        large: {max: "950px"}
       }
     }
   },

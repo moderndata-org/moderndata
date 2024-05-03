@@ -1,7 +1,4 @@
 <script setup>
-const sections = ref();
-let currentSection = ref(0);
-let isScrolling = ref(false);
 let crasoulData = [
   {
     title: "کامیاب رهگشا رادین",
@@ -128,14 +125,17 @@ let crasoulData = [
     Sdate: 1402
   }
 ];
-// scroll handler
+let sections = null;
+let currentSection = 0;
+let isScrolling = false;
 function scrollToSection(index) {
-  const targetSection = sections.value[index];
+  const targetSection = sections[index];
   const targetPosition = targetSection.offsetTop;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
   const duration = 1000; // Adjust this value to control the scroll speed
   let startTimestamp = null;
+
   function scrollStep(timestamp) {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = timestamp - startTimestamp;
@@ -148,13 +148,16 @@ function scrollToSection(index) {
     if (progress < duration) {
       window.requestAnimationFrame(scrollStep);
     } else {
-      currentSection.value = index;
-      isScrolling.value = false;
+      currentSection = index;
+      isScrolling = false;
     }
   }
-  isScrolling.value = true;
+
+  isScrolling = true;
   window.requestAnimationFrame(scrollStep);
 }
+
+// Easing function - Cubic easing in/out - acceleration until halfway, then deceleration
 function easeInOutCubic(t, b, c, d) {
   t /= d / 2;
   if (t < 1) return (c / 2) * t * t * t + b;
@@ -162,165 +165,187 @@ function easeInOutCubic(t, b, c, d) {
   return (c / 2) * (t * t * t + 2) + b;
 }
 
+// Set the initial active section
 onMounted(() => {
-  if (window.innerWidth > 768) {
-    sections.value = document.querySelectorAll("section");
-    window.addEventListener("wheel", function (event) {
-      if (isScrolling.value) return;
-
+  const initialSection = document.getElementById("section1");
+  initialSection.classList.add("active");
+  sections = document.querySelectorAll("section");
+  window.addEventListener("wheel", function (event) {
+    if (this.window.innerWidth > 950) {
+      this.document.body.style.overflowY = "hidden";
+      if (isScrolling) return;
       const delta = Math.sign(event.deltaY);
 
-      if (delta > 0 && currentSection.value < sections.value.length - 1) {
-        scrollToSection(currentSection.value + 1);
-      } else if (delta < 0 && currentSection.value > 0) {
-        scrollToSection(currentSection.value - 1);
+      if (delta > 0 && currentSection < sections.length - 1) {
+        scrollToSection(currentSection + 1);
+      } else if (delta < 0 && currentSection > 0) {
+        scrollToSection(currentSection - 1);
       }
-    });
-    const initialSection = document.getElementById("section1");
-    initialSection.classList.add("active");
-  } else {
-    document.body.style.overflow = "unset";
-  }
+    } else {
+      this.document.body.style.overflowY = "auto";
+    }
+  });
 });
 </script>
 <template>
+  <div
+    class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"
+  ></div>
   <div class="container">
-    <section id="section1" class="bg-secondry flex large:flex-col">
-      <div
-        class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
-      ></div>
-      <div
-        class="w-[60%] text-white flex flex-col z-20 mt-[220px] large:w-[100%]"
-      >
-        <p class="text-[85px] font-bold text-center large:text-[60px]">
-          داده پردازان
-          <br />
-          پارسیان نامی
-        </p>
+    <section id="section1">
+      <div class="bg-secondry flex large:flex-col w-[100%]">
         <div
-          class="flex justify-between px-[20%] h-[70px] mt-[46px] large:px-9"
+          class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
+        ></div>
+        <div
+          class="w-[60%] h-[58%] justify-between text-white flex flex-col z-20 mt-[220px] large:w-[100%]"
         >
-          <div>
-            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
-              شناسه ملی
-            </p>
+          <p class="text-[75px] font-bold text-center large:text-[60px]">
+            داده پردازان
             <br />
-            <p
-              class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
-            >
-              14006683500
-            </p>
-          </div>
-          <div>
-            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
-              شماره ثبت
-            </p>
-            <br />
-            <p
-              class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
-            >
-              12047
-            </p>
-          </div>
-          <div>
-            <p class="text-main text-[32px] font-extrabold large:text-[20px]">
-              مدیرعامل
-            </p>
-            <br />
-            <p class="text-[32px] relative bottom-[26px] large:text-[18px]">
-              فاطمه فتحی
-            </p>
+            پارسیان نامی
+          </p>
+          <div
+            class="flex justify-between items-end px-[20%] *:h-[80px] large:px-9 mt-5"
+          >
+            <div>
+              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+                شناسه ملی
+              </p>
+              <br />
+              <p
+                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
+              >
+                14006683500
+              </p>
+            </div>
+            <div>
+              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+                شماره ثبت
+              </p>
+              <br />
+              <p
+                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
+              >
+                12047
+              </p>
+            </div>
+            <div>
+              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+                مدیرعامل
+              </p>
+              <br />
+              <p class="text-[32px] relative bottom-[26px] large:text-[18px]">
+                فاطمه فتحی
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-end flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[37px] mb-6"
-      >
-        <img src="/imgs/logo.png" alt="" class="w-[320px] large:w-[250px]" />
-        <p
-          class="text-[55px] text-center relative bottom-7"
-          style="font-family: poppins"
+        <div
+          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-end flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]"
         >
-          Modern Data
-        </p>
-      </div>
-    </section>
-    <section id="section2" class="flex">
-      <div class="w-[40%] flex">
-        <div class="w-[28%] bg-main h-[100%]"></div>
-        <div class="bg-secondry text-white">
-          <p>خدمات ما</p>
-          <p>
-            شرکت ما با نام داده پردازان پارسیان نامی (مدرن دیتا) در سال 1396
-            تأسیس گردیده است. ما با تکیه بر تجربه و تخصصی که در این حوزه بدست
-            آورده‌ایم، تلاش می‌کنیم تا بهترین و جذاب‌ترین راهکارهای نرم‌افزاری
-            را برای مشتریان خود ارائه دهیم. تیم ما از افرادی با استعداد و متخصص
-            تشکیل شده است که در تمامی مراحل تولید، از طراحی تا پیاده‌سازی، با
-            انگیزه بالا و بهبود پایدار به کار می‌پردازند. ما به ارائه راهکارهای
-            نوآورانه، قابلیت های کاربردی و طراحی بصری جذاب در اپلیکیشن‌ها و
-            بازی‌های موبایلی خود متعهد هستیم. از زمان تأسیس، شرکت ما در زمینه
-            طراحی و تولید اپلیکیشن‌ها و بازی‌های موبایلی به ارائه خدمات به
-            مشتریان در داخل و خارج از کشور می‌پرداخته است. ما افتخار می کنیم که
-            با همکاری با شرکت‌ها و سازمان‌های مختلف، نیازهای نرم‌افزاری آن‌ها را
-            برآورده نموده و به بهبود عملکرد و رشد کسب و کار آن‌ها کمک کرده‌ایم.
+          <img src="/imgs/logo.png" alt="" class="w-[320px] large:w-[250px]" />
+          <p
+            class="text-[55px] text-center relative bottom-7"
+            style="font-family: poppins"
+          >
+            Modern Data
           </p>
         </div>
       </div>
-      <div>
-        <div>
-          <div>
-            <p>هوش مصنوعی</p>
-            <p>استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر</p>
-          </div>
-          <div>
-            <p>بازی سازی</p>
-            <p>
-              استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از
-              جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر
+    </section>
+    <section id="section2" class="*:z-30">
+      <div class="flex large:flex-col">
+        <div class="w-[37%] flex large:w-[100%]">
+          <div class="min-w-[28%] bg-main min-h-[100%]"></div>
+          <div class="bg-secondry text-white w-[72%] pb-[80px]">
+            <p class="text-[60px] mt-[60px] mb-[30px] font-bold pr-[15px]">
+              خدمات ما
+            </p>
+            <p class="pl-[30px] pr-[15px] text-[17px] leading-[30px]">
+              شرکت ما با نام داده پردازان پارسیان نامی (مدرن دیتا) در سال 1396
+              تأسیس گردیده است. ما با تکیه بر تجربه و تخصصی که در این حوزه بدست
+              آورده‌ایم، تلاش می‌کنیم تا بهترین و جذاب‌ترین راهکارهای نرم‌افزاری
+              را برای مشتریان خود ارائه دهیم. تیم ما از افرادی با استعداد و
+              متخصص تشکیل شده است که در تمامی مراحل تولید، از طراحی تا
+              پیاده‌سازی، با انگیزه بالا و بهبود پایدار به کار می‌پردازند. ما به
+              ارائه راهکارهای نوآورانه، قابلیت های کاربردی و طراحی بصری جذاب در
+              اپلیکیشن‌ها و بازی‌های موبایلی خود متعهد هستیم. از زمان تأسیس،
+              شرکت ما در زمینه طراحی و تولید اپلیکیشن‌ها و بازی‌های موبایلی به
+              ارائه خدمات به مشتریان در داخل و خارج از کشور می‌پرداخته است. ما
+              افتخار می کنیم که با همکاری با شرکت‌ها و سازمان‌های مختلف، نیازهای
+              نرم‌افزاری آن‌ها را برآورده نموده و به بهبود عملکرد و رشد کسب و
+              کار آن‌ها کمک کرده‌ایم.
             </p>
           </div>
-          <div>
-            <p>طراحی UI/UX</p>
-            <p>
-              استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها و
-              وب سایت ها
-            </p>
-          </div>
-          <div>
-            <p>پشتیبانی و بروزرسانی</p>
-            <p>پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی</p>
+        </div>
+        <div
+          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10"
+        >
+          <div
+            class="absolute bg-main w-[90%] h-[80%] rotate-[11deg] bottom-[-53%] left-[-15%] rounded-3xl large:w-[500px] large:left-[-35%]"
+          ></div>
+          <div
+            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 *:w-[45%] *:mobile:w-[100%] *:mobile:mx-auto *:mobile:py-10 *:rounded-2xl *:mb-[15px] *:p-5 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]"
+          >
+            <div class="bg-main">
+              <p class="text-[25px] font-bold">هوش مصنوعی</p>
+              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
+                استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر
+              </p>
+            </div>
+            <div class="bg-white mb-[15px]">
+              <p class="text-[25px] font-bold">بازی سازی</p>
+              <p class="leading-[27px] font-medium mt-[7px] text-[18px]">
+                استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از
+                جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر
+              </p>
+            </div>
+            <div class="bg-white">
+              <p class="text-[25px] font-bold">طراحی UI/UX</p>
+              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
+                استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها
+                و وب سایت ها
+              </p>
+            </div>
+            <div class="bg-white">
+              <p class="text-[25px] font-bold">پشتیبانی و بروزرسانی</p>
+              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
+                پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="section3" class="bg-black">
+    <section id="section3" class="flex large:flex-col bg-secondry z-10 *:z-10">
       <carousel
         :items-to-show="1"
-        class="w-[92%] mx-auto block"
+        class="w-[92%] mx-auto block relative"
         :wrap-around="true"
       >
         <slide
-          class="flex flex-col !w-[98%] !mx-[1%] [direction:rtl]"
+          class="flex flex-col !w-[96%] !mx-[2%] [direction:rtl]"
           v-for="item in crasoulData"
         >
           <div
-            class="w-[100%] h-[clamp(300px,65vh,65vh)] tablet:h-auto pb-3 flex justify-between tablet:flex-col text-start pt-[60px] tablet:pt-0"
+            class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0"
           >
             <div
-              class="w-[40%] h-[99%] tablet:pb-[20px] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden tablet:w-[100%]"
+              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[400px] large:mt-[40px]"
             >
               <p
-                class="text-main text-[40px] mt-[40px] mb-[20px] font-[700] pr-[30px]"
+                class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]"
               >
                 {{ item.title }}
               </p>
               <p class="text-[15px] pr-[60px]">{{ item.description }}</p>
-              <ul class="list-disc pr-[85px] mt-[20px]">
+              <ul class="list-disc pr-[85px] mt-[20px] large:!mb-[50px]">
                 <li v-for="list in item.notes">{{ list }}</li>
               </ul>
             </div>
             <div
-              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] tablet:w-[100%] tablet:mt-[50px] before"
+              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:max-h-[380px]"
             >
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />
@@ -328,10 +353,10 @@ onMounted(() => {
             </div>
           </div>
           <div
-            class="h-[120px] mt-[47px] w-[101%] flex justify-between tablet:flex-col tablet:h-[250px]"
+            class="h-[120px] mt-[47px] w-[101%] flex justify-between large:flex-col large:h-[350px]"
           >
             <div
-              class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 tablet:w-[100%] tablet:!min-h-[135px]"
+              class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 large:w-[100%] large:!h-[135px]"
             >
               <div class="flex justify-around relative pb-[20px] items-center">
                 <p class="absolute bottom-[2px] text-center w-[100%]">
@@ -370,7 +395,7 @@ onMounted(() => {
               </div>
             </div>
             <div
-              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] tablet:w-[100%] tablet:mt-[30px]"
+              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] large:w-[100%] large:mt-[30px] large:h-[150px]"
             >
               <img
                 src="/imgs/crasoul-banner.png"
@@ -386,7 +411,27 @@ onMounted(() => {
         </template>
       </carousel>
     </section>
-    <section id="section4">Section 4</section>
+    <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
+      <div class="bg-secondry text-white min-w-[34%] z-10 ">
+        <p class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold">
+          ارتباط با ما
+        </p>
+        <p class="px-[30px] mb-[30px] text-[24px] leading-[40px]">
+          گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه اول،واحد
+          405
+        </p>
+        <p class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px]">
+          info@moderndata.ir <br />
+          09382138446
+        </p>
+      </div>
+      <div class="min-w-[66%] relative ">
+        <div
+          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%] "
+        ></div>
+        <img src="/imgs/footer.png" alt="" class="w-[100%] h-[100%]" />
+      </div>
+    </section>
   </div>
 </template>
 <style>
@@ -406,7 +451,10 @@ body {
   font-family: shabnam;
 }
 section {
-  @apply max-w-[100%] overflow-hidden h-[100vh] flex large:h-auto large:min-h-[100vh];
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  @apply large:h-auto;
 }
 .before {
   @apply before:border-white before:rounded-3xl before:border-2 relative before:absolute before:w-[100%] before:h-[100%];
@@ -419,5 +467,8 @@ section {
 }
 .carousel__next .carousel__icon {
   @apply right-5;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 </style>

@@ -160,7 +160,7 @@ function scrollToSection(index) {
   const targetPosition = targetSection.offsetTop;
   const startPosition = window.pageYOffset;
   const distance = targetPosition - startPosition;
-  const duration = 1000; // Adjust this value to control the scroll speed
+  const duration = 1000;
   let startTimestamp = null;
 
   function scrollStep(timestamp) {
@@ -183,16 +183,12 @@ function scrollToSection(index) {
   isScrolling = true;
   window.requestAnimationFrame(scrollStep);
 }
-
-// Easing function - Cubic easing in/out - acceleration until halfway, then deceleration
 function easeInOutCubic(t, b, c, d) {
   t /= d / 2;
   if (t < 1) return (c / 2) * t * t * t + b;
   t -= 2;
   return (c / 2) * (t * t * t + 2) + b;
 }
-
-// Set the initial active section
 onMounted(() => {
   const initialSection = document.getElementById("section1");
   initialSection.classList.add("active");
@@ -209,7 +205,7 @@ onMounted(() => {
         scrollToSection(currentSection - 1);
       }
     } else {
-      this.document.body.style.overflowY = "auto";
+      this.document.body.style.overflowY = "unset";
     }
   });
 });
@@ -460,6 +456,8 @@ onMounted(() => {
 </template>
 <style>
 * {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
   @apply !max-w-[100vw];
 }
 @font-face {

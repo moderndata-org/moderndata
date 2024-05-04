@@ -218,8 +218,14 @@ onMounted(() => {
     class="container"
     style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
   >
-    <section id="section1">
-      <div class="bg-secondry flex large:flex-col w-[100%]">
+    <section
+      id="section1"
+      style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
+    >
+      <div
+        class="bg-secondry flex large:flex-col w-[100%]"
+        style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
+      >
         <div
           class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
         ></div>
@@ -456,8 +462,6 @@ onMounted(() => {
 </template>
 <style>
 * {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
   @apply !max-w-[100vw];
 }
 @font-face {

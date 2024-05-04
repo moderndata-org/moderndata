@@ -362,7 +362,7 @@ onMounted(() => {
               </ul>
             </div>
             <div
-              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:max-h-[380px]"
+              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:min-h-[300px] large:max-h-[300px]"
             >
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />
@@ -445,7 +445,7 @@ onMounted(() => {
           09382138446
         </p>
       </div>
-      
+
       <div class="min-w-[66%] relative">
         <div
           class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"

@@ -458,6 +458,11 @@ onMounted(() => {
 * {
   @apply !max-w-[100vw];
 }
+.__nuxt,
+.__nuxt > div {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
 @font-face {
   font-family: poppins;
   src: url(/font/Poppins-Bold.ttf) format(truetype);
@@ -467,8 +472,6 @@ onMounted(() => {
   src: url(/font/Shabnam-FD.ttf) format(truetype);
 }
 body {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
   @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];
   font-family: shabnam;
 }

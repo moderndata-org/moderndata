@@ -214,14 +214,8 @@ onMounted(() => {
   <div
     class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"
   ></div>
-  <div
-    class="container"
-    style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
-  >
-    <section
-      id="section1"
-      style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
-    >
+  <div class="container">
+    <section id="section1">
       <div
         class="bg-secondry flex large:flex-col w-[100%]"
         style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
@@ -473,6 +467,8 @@ onMounted(() => {
   src: url(/font/Shabnam-FD.ttf) format(truetype);
 }
 body {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
   @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];
   font-family: shabnam;
 }

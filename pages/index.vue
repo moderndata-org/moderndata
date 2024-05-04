@@ -218,7 +218,10 @@ onMounted(() => {
   <div
     class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"
   ></div>
-  <div class="container">
+  <div
+    class="container"
+    style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
+  >
     <section id="section1">
       <div class="bg-secondry flex large:flex-col w-[100%]">
         <div

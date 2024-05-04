@@ -85,7 +85,7 @@ let crasoulData = [
       "امکان مشاهده تاریخچه پشتیبانی ها",
       "امکان ارجاع به پشتیبان های دیگر"
     ],
-    platform: {android: true, IOS: false, web: true },
+    platform: {android: true, IOS: false, web: true},
     deployTime: 120,
     Sdate: 1402
   },
@@ -227,7 +227,9 @@ onMounted(() => {
         <div
           class="w-[60%] h-[80vh] justify-end pb-[12px] text-white flex flex-col z-20 mt-[10vh] large:h-[58%] large:w-[100%]"
         >
-          <p class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]">
+          <p
+            class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]"
+          >
             داده پردازان
             <br />
             پارسیان نامی
@@ -282,7 +284,7 @@ onMounted(() => {
       </div>
     </section>
     <section id="section2" class="*:z-30">
-      <div class="flex large:flex-col">
+      <div class="flex large:flex-col h-[100vh] large:h-auto">
         <div class="w-[37%] flex large:w-[100%]">
           <div class="min-w-[28%] bg-main min-h-[100%]"></div>
           <div class="bg-secondry text-white w-[72%] pb-[80px]">
@@ -428,14 +430,18 @@ onMounted(() => {
     </section>
     <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
       <div class="bg-secondry text-white min-w-[34%] z-10">
-        <p class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]">
+        <p
+          class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]"
+        >
           ارتباط با ما
         </p>
         <p class="px-[30px] mb-[30px] text-[24px] leading-[40px]">
           گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه اول،واحد
           405
         </p>
-        <p class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]">
+        <p
+          class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]"
+        >
           info@moderndata.ir <br />
           09382138446
         </p>
@@ -459,7 +465,7 @@ onMounted(() => {
 }
 @font-face {
   font-family: shabnam;
-  src: url(/font/shabnam-FD.ttf) format(truetype);
+  src: url(/font/Shabnam-FD.ttf) format(truetype);
 }
 body {
   @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];

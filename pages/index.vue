@@ -407,7 +407,7 @@ onMounted(() => {
                 <p class="text-[28px] font-sans font-bold">
                   {{ item.Sdate }}
                 </p>
-                <p class="absolute bottom-1 text-[14px]">تاریخ شروع پروژ</p>
+                <p class="absolute bottom-1 text-[14px]">تاریخ شروع پروژه</p>
               </div>
             </div>
             <div
@@ -423,20 +423,19 @@ onMounted(() => {
         </slide>
         <template #addons style="direction: ltr" class="bold">
           <Navigation />
-          <pagination />
         </template>
       </carousel>
     </section>
     <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
       <div class="bg-secondry text-white min-w-[34%] z-10">
-        <p class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold">
+        <p class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]">
           ارتباط با ما
         </p>
         <p class="px-[30px] mb-[30px] text-[24px] leading-[40px]">
           گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه اول،واحد
           405
         </p>
-        <p class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px]">
+        <p class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]">
           info@moderndata.ir <br />
           09382138446
         </p>

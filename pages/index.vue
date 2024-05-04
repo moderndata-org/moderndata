@@ -85,7 +85,7 @@ let crasoulData = [
       "امکان مشاهده تاریخچه پشتیبانی ها",
       "امکان ارجاع به پشتیبان های دیگر"
     ],
-    platform: {android: true, IOS: false, web: false},
+    platform: {android: true, IOS: false, web: true },
     deployTime: 120,
     Sdate: 1402
   },
@@ -123,6 +123,33 @@ let crasoulData = [
     platform: {android: true, IOS: false, web: true},
     deployTime: 35,
     Sdate: 1402
+  }
+];
+let services = [
+  {
+    title: "هوش مصنوعی",
+    description:
+      " استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر",
+    class: "!bg-main",
+    delay: 300
+  },
+  {
+    title: "بازی سازی",
+    description:
+      "استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر",
+    Pclass: "!leading-[27px]",
+    delay: 600
+  },
+  {
+    title: " طراحی UI/UX",
+    description:
+      " استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها و وب سایت ها",
+    delay: 900
+  },
+  {
+    title: "پشتیبانی و بروزرسانی",
+    description: "پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی",
+    delay: 1200
   }
 ];
 let sections = null;
@@ -198,9 +225,9 @@ onMounted(() => {
           class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
         ></div>
         <div
-          class="w-[60%] h-[58%] justify-between text-white flex flex-col z-20 mt-[220px] large:w-[100%]"
+          class="w-[60%] h-[80vh] justify-end pb-[12px] text-white flex flex-col z-20 mt-[10vh] large:h-[58%] large:w-[100%]"
         >
-          <p class="text-[75px] font-bold text-center large:text-[60px]">
+          <p class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]">
             داده پردازان
             <br />
             پارسیان نامی
@@ -280,38 +307,27 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10"
+          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10 pb-[3%]"
         >
           <div
             class="absolute bg-main w-[90%] h-[80%] rotate-[11deg] bottom-[-53%] left-[-15%] rounded-3xl large:w-[500px] large:left-[-35%]"
           ></div>
           <div
-            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 *:w-[45%] *:mobile:w-[100%] *:mobile:mx-auto *:mobile:py-10 *:rounded-2xl *:mb-[15px] *:p-5 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]"
+            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]"
           >
-            <div class="bg-main">
-              <p class="text-[25px] font-bold">هوش مصنوعی</p>
-              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
-                استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر
-              </p>
-            </div>
-            <div class="bg-white mb-[15px]">
-              <p class="text-[25px] font-bold">بازی سازی</p>
-              <p class="leading-[27px] font-medium mt-[7px] text-[18px]">
-                استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از
-                جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر
-              </p>
-            </div>
-            <div class="bg-white">
-              <p class="text-[25px] font-bold">طراحی UI/UX</p>
-              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
-                استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها
-                و وب سایت ها
-              </p>
-            </div>
-            <div class="bg-white">
-              <p class="text-[25px] font-bold">پشتیبانی و بروزرسانی</p>
-              <p class="leading-[30px] font-medium mt-[7px] text-[18px]">
-                پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی
+            <div
+              class="bg-white w-[45%] mobile:w-[100%] mobile:mx-auto mobile:py-10 rounded-2xl mb-[15px] p-5"
+              data-aos="fade-left"
+              v-for="item in services"
+              :data-aos-delay="item.delay"
+              :class="item.class"
+            >
+              <p class="text-[25px] font-bold">{{ item.title }}</p>
+              <p
+                class="leading-[30px] font-medium mt-[7px] text-[18px]"
+                :class="item.Pclass"
+              >
+                {{ item.description }}
               </p>
             </div>
           </div>
@@ -412,7 +428,7 @@ onMounted(() => {
       </carousel>
     </section>
     <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
-      <div class="bg-secondry text-white min-w-[34%] z-10 ">
+      <div class="bg-secondry text-white min-w-[34%] z-10">
         <p class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold">
           ارتباط با ما
         </p>
@@ -425,9 +441,9 @@ onMounted(() => {
           09382138446
         </p>
       </div>
-      <div class="min-w-[66%] relative ">
+      <div class="min-w-[66%] relative">
         <div
-          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%] "
+          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"
         ></div>
         <img src="/imgs/footer.png" alt="" class="w-[100%] h-[100%]" />
       </div>
@@ -460,7 +476,7 @@ section {
   @apply before:border-white before:rounded-3xl before:border-2 relative before:absolute before:w-[100%] before:h-[100%];
 }
 .carousel__icon {
-  @apply fill-main scale-[1.5] relative transition-all hover:scale-[2];
+  @apply fill-main scale-[1.5] relative transition-all hover:scale-[1.6] bg-secondry rounded-full max-h-[30px];
 }
 .carousel__prev .carousel__icon {
   @apply left-5;

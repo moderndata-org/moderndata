@@ -445,6 +445,7 @@ onMounted(() => {
           09382138446
         </p>
       </div>
+      
       <div class="min-w-[66%] relative">
         <div
           class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"
@@ -474,6 +475,8 @@ onMounted(() => {
 body {
   @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];
   font-family: shabnam;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
 }
 section {
   height: 100vh;

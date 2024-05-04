@@ -234,7 +234,7 @@ onMounted(() => {
             پارسیان نامی
           </p>
           <div
-            class="flex justify-between items-end px-[20%] *:h-[80px] large:px-9 mt-5"
+            class="flex justify-between items-end px-[15%] *:h-[80px] large:px-9 mt-5"
           >
             <div>
               <p class="text-main text-[32px] font-extrabold large:text-[20px]">
@@ -270,22 +270,30 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-end flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]"
+          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-center flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]"
         >
-          <img src="/imgs/logo.png" alt="" class="w-[320px] large:w-[250px]" />
-          <p
-            class="text-[55px] text-center relative bottom-7"
-            style="font-family: poppins"
+          <div
+            class="flex justify-center items-center flex-col pt-[20%] large:pt-0"
           >
-            Modern Data
-          </p>
+            <img
+              src="/imgs/logo.png"
+              alt=""
+              class="w-[320px] large:w-[250px]"
+            />
+            <p
+              class="text-[55px] text-center relative bottom-7"
+              style="font-family: poppins"
+            >
+              Modern Data
+            </p>
+          </div>
         </div>
       </div>
     </section>
     <section id="section2" class="*:z-30">
       <div class="flex large:flex-col h-[100vh] large:h-auto">
         <div class="w-[37%] flex large:w-[100%]">
-          <div class="min-w-[28%] bg-main min-h-[100%]"></div>
+          <div class="min-w-[28%] bg-main min-h-[100%] large:w-[15%]"></div>
           <div class="bg-secondry text-white w-[72%] pb-[80px]">
             <p class="text-[60px] mt-[60px] mb-[30px] font-bold pr-[15px]">
               خدمات ما
@@ -342,14 +350,14 @@ onMounted(() => {
         :wrap-around="true"
       >
         <slide
-          class="flex flex-col !w-[96%] !mx-[2%] [direction:rtl]"
+          class="flex flex-col !w-[94%] !mx-[3%] [direction:rtl]"
           v-for="item in crasoulData"
         >
           <div
             class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0"
           >
             <div
-              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[400px] large:mt-[40px]"
+              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[420px] large:!max-h-[420px] large:mt-[40px]"
             >
               <p
                 class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]"
@@ -381,18 +389,18 @@ onMounted(() => {
                 </p>
                 <img
                   v-if="item.platform.web"
-                  src="/imgs/chrome.png"
-                  class="w-[28px] h-[28px] relative top-[2px]"
+                  src="/imgs/chrome.svg"
+                  class="w-[32px] h-[32px] relative top-[2px]"
                   alt=""
                 />
                 <img
-                  src="/imgs/apple.png"
-                  class="w-[28px] h-[28px]"
+                  src="/imgs/apple.svg"
+                  class="w-[38px] h-[38px]"
                   alt=""
                   v-if="item.platform.IOS"
                 />
                 <img
-                  src="/imgs/android.png"
+                  src="/imgs/android.svg"
                   class="w-[28px] h-[28px]"
                   alt=""
                   v-if="item.platform.android"

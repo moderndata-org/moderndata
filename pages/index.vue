@@ -293,8 +293,10 @@ onMounted(() => {
     <section id="section2" class="*:z-30">
       <div class="flex large:flex-col h-[100vh] large:h-auto">
         <div class="w-[37%] flex large:w-[100%]">
-          <div class="min-w-[28%] bg-main min-h-[100%] large:w-[15%]"></div>
-          <div class="bg-secondry text-white w-[72%] pb-[80px]">
+          <div
+            class="min-w-[28%] bg-main min-h-[100%] large:!min-w-[15%] large:max-w-[15%]"
+          ></div>
+          <div class="bg-secondry text-white w-[72%] pb-[80px] large:w-[85%]">
             <p class="text-[60px] mt-[60px] mb-[30px] font-bold pr-[15px]">
               خدمات ما
             </p>
@@ -357,7 +359,7 @@ onMounted(() => {
             class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0"
           >
             <div
-              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[420px] large:!max-h-[420px] large:mt-[40px]"
+              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[450px] large:!max-h-[450px] large:mt-[40px]"
             >
               <p
                 class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]"
@@ -384,39 +386,43 @@ onMounted(() => {
               class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 large:w-[100%] large:!h-[135px]"
             >
               <div class="flex justify-around relative pb-[20px] items-center">
-                <p class="absolute bottom-[2px] text-center w-[100%]">
+                <p class="absolute bottom-[2px] text-center w-[100%] large:text-[12px]">
                   پلتفرم ها
                 </p>
                 <img
                   v-if="item.platform.web"
                   src="/imgs/chrome.svg"
-                  class="w-[32px] h-[32px] relative top-[2px]"
+                  class="w-[34px] h-[26px] relative top-[2px]"
                   alt=""
                 />
                 <img
                   src="/imgs/apple.svg"
-                  class="w-[38px] h-[38px]"
+                  class="w-[34px] h-[38px]"
                   alt=""
                   v-if="item.platform.IOS"
                 />
                 <img
                   src="/imgs/android.svg"
-                  class="w-[28px] h-[28px]"
+                  class="w-[24px] h-[28px]"
                   alt=""
                   v-if="item.platform.android"
                 />
               </div>
-              <div class="relative !w-[130px]">
+              <div class="relative !w-[130px] ">
                 <p class="text-[28px] font-sans font-bold">
                   {{ item.deployTime }}
                 </p>
-                <p class="absolute bottom-1 text-[14px]">مدت زمان اجرا (روز)</p>
+                <p class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                  مدت زمان اجرا (روز)
+                </p>
               </div>
-              <div class="relative">
-                <p class="text-[28px] font-sans font-bold">
+              <div class="relative text-center">
+                <p class="text-[28px] font-sans font-bold ">
                   {{ item.Sdate }}
                 </p>
-                <p class="absolute bottom-1 text-[14px]">تاریخ شروع پروژه</p>
+                <p class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                  تاریخ شروع پروژه
+                </p>
               </div>
             </div>
             <div

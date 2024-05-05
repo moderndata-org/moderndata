@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag latest
     - name: push image
-        run: docker push ghcr.io/moderndata-org/moderndata:latest
+      run: docker push ghcr.io/moderndata-org/moderndata:latest

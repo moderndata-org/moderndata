@@ -212,38 +212,31 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"
-  ></div>
+    class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"></div>
   <div class="container">
     <section id="section1">
       <div
         class="bg-secondry flex large:flex-col w-[100%]"
-        style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
-      >
+        style="-webkit-overflow-scrolling: touch; overflow-y: scroll">
         <div
-          class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"
-        ></div>
+          class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"></div>
         <div
-          class="w-[60%] h-[80vh] justify-end pb-[12px] text-white flex flex-col z-20 mt-[10vh] large:h-[58%] large:w-[100%]"
-        >
+          class="w-[60%] h-[80vh] justify-end pb-[12px] text-white flex flex-col z-20 mt-[10vh] large:h-[58%] large:w-[100%]">
           <p
-            class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]"
-          >
+            class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]">
             داده پردازان
             <br />
             پارسیان نامی
           </p>
           <div
-            class="flex justify-between items-end px-[15%] *:h-[80px] large:px-9 mt-5"
-          >
+            class="flex justify-between items-end px-[15%] *:h-[80px] large:px-9 mt-5">
             <div>
               <p class="text-main text-[32px] font-extrabold large:text-[20px]">
                 شناسه ملی
               </p>
               <br />
               <p
-                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
-              >
+                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]">
                 14006683500
               </p>
             </div>
@@ -253,8 +246,7 @@ onMounted(() => {
               </p>
               <br />
               <p
-                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]"
-              >
+                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]">
                 12047
               </p>
             </div>
@@ -270,32 +262,28 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-center flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]"
-        >
+          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-center flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]">
           <div
-            class="flex justify-center items-center flex-col pt-[20%] large:pt-0"
-          >
+            class="flex justify-center items-center flex-col pt-[20%] large:pt-0">
             <img
               src="/imgs/logo.png"
               alt=""
-              class="w-[320px] large:w-[250px]"
-            />
+              class="w-[320px] large:w-[250px]" />
             <p
               class="text-[55px] text-center relative bottom-7"
-              style="font-family: poppins"
-            >
+              style="font-family: poppins">
               Modern Data
             </p>
           </div>
         </div>
       </div>
     </section>
+
     <section id="section2" class="*:z-30">
       <div class="flex large:flex-col h-[100vh] large:h-auto">
         <div class="w-[37%] flex large:w-[100%]">
           <div
-            class="min-w-[28%] bg-main min-h-[100%] large:!min-w-[15%] large:max-w-[15%]"
-          ></div>
+            class="min-w-[28%] bg-main min-h-[100%] large:!min-w-[15%] large:max-w-[15%]"></div>
           <div class="bg-secondry text-white w-[72%] pb-[80px] large:w-[85%]">
             <p class="text-[60px] mt-[60px] mb-[30px] font-bold pr-[15px]">
               خدمات ما
@@ -318,26 +306,21 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10 pb-[3%]"
-        >
+          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10 pb-[3%]">
           <div
-            class="absolute bg-main w-[90%] h-[80%] rotate-[11deg] bottom-[-53%] left-[-15%] rounded-3xl large:w-[500px] large:left-[-35%]"
-          ></div>
+            class="absolute bg-main w-[90%] h-[80%] rotate-[11deg] bottom-[-53%] left-[-15%] rounded-3xl large:w-[500px] large:left-[-35%]"></div>
           <div
-            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]"
-          >
+            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]">
             <div
               class="bg-white w-[45%] mobile:w-[100%] mobile:mx-auto mobile:py-10 rounded-2xl mb-[15px] p-5"
               data-aos="fade-left"
               v-for="item in services"
               :data-aos-delay="item.delay"
-              :class="item.class"
-            >
+              :class="item.class">
               <p class="text-[25px] font-bold">{{ item.title }}</p>
               <p
                 class="leading-[30px] font-medium mt-[7px] text-[18px]"
-                :class="item.Pclass"
-              >
+                :class="item.Pclass">
                 {{ item.description }}
               </p>
             </div>
@@ -345,25 +328,21 @@ onMounted(() => {
         </div>
       </div>
     </section>
+
     <section id="section3" class="flex large:flex-col bg-secondry z-10 *:z-10">
       <carousel
         :items-to-show="1"
         class="w-[92%] mx-auto block relative"
-        :wrap-around="true"
-      >
+        :wrap-around="true">
         <slide
           class="flex flex-col !w-[94%] !mx-[3%] [direction:rtl]"
-          v-for="item in crasoulData"
-        >
+          v-for="item in crasoulData">
           <div
-            class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0"
-          >
+            class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0">
             <div
-              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[450px] large:!max-h-[450px] large:mt-[40px]"
-            >
+              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[450px] large:!max-h-[450px] large:mt-[40px]">
               <p
-                class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]"
-              >
+                class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]">
                 {{ item.title }}
               </p>
               <p class="text-[15px] pr-[60px]">{{ item.description }}</p>
@@ -372,67 +351,62 @@ onMounted(() => {
               </ul>
             </div>
             <div
-              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:min-h-[300px] large:max-h-[300px]"
-            >
+              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:min-h-[300px] large:max-h-[300px]">
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />
               <img :src="item.banner3" alt="" />
             </div>
           </div>
           <div
-            class="h-[120px] mt-[47px] w-[101%] flex justify-between large:flex-col large:h-[350px]"
-          >
+            class="h-[120px] mt-[47px] w-[101%] flex justify-between large:flex-col large:h-[350px]">
             <div
-              class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 large:w-[100%] large:!h-[135px]"
-            >
+              class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 large:w-[100%] large:!h-[135px]">
               <div class="flex justify-around relative pb-[20px] items-center">
-                <p class="absolute bottom-[2px] text-center w-[100%] large:text-[12px]">
+                <p
+                  class="absolute bottom-[2px] text-center w-[100%] large:text-[12px]">
                   پلتفرم ها
                 </p>
                 <img
                   v-if="item.platform.web"
                   src="/imgs/chrome.svg"
                   class="w-[34px] h-[26px] relative top-[2px]"
-                  alt=""
-                />
+                  alt="" />
                 <img
                   src="/imgs/apple.svg"
                   class="w-[34px] h-[38px]"
                   alt=""
-                  v-if="item.platform.IOS"
-                />
+                  v-if="item.platform.IOS" />
                 <img
                   src="/imgs/android.svg"
                   class="w-[24px] h-[28px]"
                   alt=""
-                  v-if="item.platform.android"
-                />
+                  v-if="item.platform.android" />
               </div>
-              <div class="relative !w-[130px] ">
+              <div class="relative !w-[130px]">
                 <p class="text-[28px] font-sans font-bold">
                   {{ item.deployTime }}
                 </p>
-                <p class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                <p
+                  class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
                   مدت زمان اجرا (روز)
                 </p>
               </div>
               <div class="relative text-center">
-                <p class="text-[28px] font-sans font-bold ">
+                <p class="text-[28px] font-sans font-bold">
                   {{ item.Sdate }}
                 </p>
-                <p class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                <p
+                  class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
                   تاریخ شروع پروژه
                 </p>
               </div>
             </div>
             <div
-              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] large:w-[100%] large:mt-[30px] large:h-[150px]"
-            >
+              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] large:w-[100%] large:mt-[30px] large:h-[150px]">
               <img
                 src="/imgs/crasoul-banner.png"
                 class="z-[100] h-[98%] w-[100%] border-2 border-white rounded-3xl"
-                alt=""
-              />
+                alt="" />
             </div>
           </div>
         </slide>
@@ -441,11 +415,11 @@ onMounted(() => {
         </template>
       </carousel>
     </section>
+
     <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
       <div class="bg-secondry text-white min-w-[34%] z-10">
         <p
-          class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]"
-        >
+          class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]">
           ارتباط با ما
         </p>
         <p class="px-[30px] mb-[30px] text-[24px] leading-[40px]">
@@ -453,8 +427,7 @@ onMounted(() => {
           405
         </p>
         <p
-          class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]"
-        >
+          class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]">
           info@moderndata.ir <br />
           09382138446
         </p>
@@ -462,22 +435,13 @@ onMounted(() => {
 
       <div class="min-w-[66%] relative">
         <div
-          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"
-        ></div>
+          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"></div>
         <img src="/imgs/footer.png" alt="" class="w-[100%] h-[100%]" />
       </div>
     </section>
   </div>
 </template>
 <style>
-* {
-  @apply !max-w-[100vw];
-}
-.__nuxt,
-.__nuxt > div {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-}
 @font-face {
   font-family: poppins;
   src: url(/font/Poppins-Bold.ttf) format(truetype);
@@ -485,6 +449,14 @@ onMounted(() => {
 @font-face {
   font-family: shabnam;
   src: url(/font/Shabnam-FD.ttf) format(truetype);
+}
+* {
+  @apply !max-w-[100vw];
+}
+.__nuxt,
+.__nuxt > div {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
 }
 body {
   @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];

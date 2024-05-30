@@ -12,11 +12,11 @@ let crasoulData = [
       "امکان درخواست امداد",
       "امکان مشاهده سابقه امداد ها",
       "امکان تسویه حساب",
-      "امکان درخواست قیمت و مشاهده مکان راننده بصورت زنده"
+      "امکان درخواست قیمت و مشاهده مکان راننده بصورت زنده",
     ],
-    platform: {android: true, IOS: true, web: true},
+    platform: { android: true, IOS: true, web: true },
     deployTime: 240,
-    Sdate: 1400
+    Sdate: 1400,
   },
   {
     title: "پدرخوانده دستیار مافیا",
@@ -30,11 +30,11 @@ let crasoulData = [
       "امکان آموزش سناریو های مختلف مافیا",
       "بازی آنلاین",
       "رتبه بندی کاربران",
-      "شبکه اجتماعی و دوستیابی"
+      "شبکه اجتماعی و دوستیابی",
     ],
-    platform: {android: true, IOS: true, web: true},
+    platform: { android: true, IOS: true, web: true },
     deployTime: 120,
-    Sdate: 1402
+    Sdate: 1402,
   },
   {
     title: "AR Gallery",
@@ -47,11 +47,11 @@ let crasoulData = [
       "امکان Train در لحظه تصاویر",
       "امکان حذف اضافه یا ویرایش تصاویر و ویدئو های مرتبط",
       "امکان Multi - Target",
-      "امکان استفاده بصورت آفلاین"
+      "امکان استفاده بصورت آفلاین",
     ],
-    platform: {android: true, IOS: true, web: true},
+    platform: { android: true, IOS: true, web: true },
     deployTime: 45,
-    Sdate: 1402
+    Sdate: 1402,
   },
   {
     title: "کشاورز",
@@ -65,11 +65,11 @@ let crasoulData = [
       "امکان مشاهده سرویس دهندگان در اطراف شما",
       "مشاهده هزینه انجام سرویس",
       "امکان ساخت پروفایل کاربری",
-      "امکان مشاهده آموزش های استفاده از آلات مختلف کشاورزی"
+      "امکان مشاهده آموزش های استفاده از آلات مختلف کشاورزی",
     ],
-    platform: {android: true, IOS: false, web: false},
+    platform: { android: true, IOS: false, web: false },
     deployTime: 30,
-    Sdate: 1402
+    Sdate: 1402,
   },
   {
     title: "EASA",
@@ -83,11 +83,11 @@ let crasoulData = [
       "امکان مشاهده درخواست های پشتیبانی در اپلیکیشن",
       "امکان تخصیص سرویس به پشتیبان از پنل مدیریت",
       "امکان مشاهده تاریخچه پشتیبانی ها",
-      "امکان ارجاع به پشتیبان های دیگر"
+      "امکان ارجاع به پشتیبان های دیگر",
     ],
-    platform: {android: true, IOS: false, web: true},
+    platform: { android: true, IOS: false, web: true },
     deployTime: 120,
-    Sdate: 1402
+    Sdate: 1402,
   },
   {
     title: "Virtustich",
@@ -101,11 +101,11 @@ let crasoulData = [
       "امکان مشاهده نظرات درمورد خیاط و سفارش دهنده",
       "امکان مشاهده لیست سفارشات",
       "امکان قیمت گذاری روی تصاویر",
-      "امکان NFT تصاویر ساخته شده "
+      "امکان NFT تصاویر ساخته شده ",
     ],
-    platform: {android: true, IOS: false, web: true},
+    platform: { android: true, IOS: false, web: true },
     deployTime: 120,
-    Sdate: 1403
+    Sdate: 1403,
   },
   {
     title: "قوزک",
@@ -118,12 +118,12 @@ let crasoulData = [
       "امکان شمارش قدم ها بصورت آفلاین",
       "امکان شمارش در لحظه",
       "امکان نمایش آموزش های ورزشی",
-      "امکان ارائه رژیم"
+      "امکان ارائه رژیم",
     ],
-    platform: {android: true, IOS: false, web: true},
+    platform: { android: true, IOS: false, web: true },
     deployTime: 35,
-    Sdate: 1402
-  }
+    Sdate: 1402,
+  },
 ];
 let services = [
   {
@@ -131,26 +131,26 @@ let services = [
     description:
       " استفاده از جدید ترین مدل های تشخیص زبان طبیعی و تشخیص تصاویر",
     class: "!bg-main",
-    delay: 300
+    delay: 300,
   },
   {
     title: "بازی سازی",
     description:
       "استفاده از جدیدترین موتورهای بازی سازی مانند Flame و استفاده از جدید ترین تکنولوژی های انیمیشن سازی و ساخت کاراکتر",
     Pclass: "!leading-[27px]",
-    delay: 600
+    delay: 600,
   },
   {
     title: " طراحی UI/UX",
     description:
       " استفاده از جدیدترین و مدرن ترین روش های طراحی UI در اپلیکیشن ها و وب سایت ها",
-    delay: 900
+    delay: 900,
   },
   {
     title: "پشتیبانی و بروزرسانی",
     description: "پشتیبانی دائم و بروزرسانی اپلیکیشن های تحت پشتیبانی",
-    delay: 1200
-  }
+    delay: 1200,
+  },
 ];
 let sections = null;
 let currentSection = 0;
@@ -169,7 +169,7 @@ function scrollToSection(index) {
 
     window.scrollTo(
       0,
-      easeInOutCubic(progress, startPosition, distance, duration)
+      easeInOutCubic(progress, startPosition, distance, duration),
     );
 
     if (progress < duration) {
@@ -198,7 +198,6 @@ onMounted(() => {
       this.document.body.style.overflowY = "hidden";
       if (isScrolling) return;
       const delta = Math.sign(event.deltaY);
-
       if (delta > 0 && currentSection < sections.length - 1) {
         scrollToSection(currentSection + 1);
       } else if (delta < 0 && currentSection > 0) {
@@ -212,66 +211,78 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-11deg] z-[1] top-[170%] left-[-45%] large:hidden"></div>
+    class="absolute left-[-45%] top-[170%] z-[1] h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main large:hidden"
+  ></div>
   <div class="container">
     <section id="section1">
       <div
-        class="bg-secondry flex large:flex-col w-[100%]"
-        style="-webkit-overflow-scrolling: touch; overflow-y: scroll">
+        class="flex w-[100%] bg-secondry large:flex-col"
+        style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
+      >
         <div
-          class="absolute w-[72%] max-w-[1250px] rounded-3xl h-[50%] bg-main top-[-130px] right-[-15%] rotate-[11deg]"></div>
+          class="absolute right-[-15%] top-[-130px] h-[50%] w-[72%] max-w-[1250px] rotate-[11deg] rounded-3xl bg-main"
+        ></div>
         <div
-          class="w-[60%] h-[80vh] justify-end pb-[12px] text-white flex flex-col z-20 mt-[10vh] large:h-[58%] large:w-[100%]">
+          class="z-20 mt-[10vh] flex h-[80vh] w-[60%] flex-col justify-end pb-[12px] text-white large:h-[58%] large:w-[100%]"
+        >
           <p
-            class="text-[75px] mb-[70px] font-bold text-center large:text-[60px]">
+            class="mb-[70px] text-center text-[75px] font-bold large:text-[60px]"
+          >
             داده پردازان
             <br />
             پارسیان نامی
           </p>
           <div
-            class="flex justify-between items-end px-[15%] *:h-[80px] large:px-9 mt-5">
+            class="mt-5 flex items-end justify-between px-[15%] *:h-[80px] large:px-9"
+          >
             <div>
-              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
                 شناسه ملی
               </p>
               <br />
               <p
-                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]">
+                class="relative bottom-[26px] font-sans text-[32px] large:text-[18px]"
+              >
                 14006683500
               </p>
             </div>
             <div>
-              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
                 شماره ثبت
               </p>
               <br />
               <p
-                class="font-sans text-[32px] relative bottom-[26px] large:text-[18px]">
+                class="relative bottom-[26px] font-sans text-[32px] large:text-[18px]"
+              >
                 12047
               </p>
             </div>
             <div>
-              <p class="text-main text-[32px] font-extrabold large:text-[20px]">
+              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
                 مدیرعامل
               </p>
               <br />
-              <p class="text-[32px] relative bottom-[26px] large:text-[18px]">
+              <p class="relative bottom-[26px] text-[32px] large:text-[18px]">
                 فاطمه فتحی
               </p>
             </div>
           </div>
         </div>
         <div
-          class="bg-main h-[80vh] mt-[10vh] rounded-3xl before before:top-[-5px] before:left-[-5px] justify-center flex pb-[30px] items-center flex-col w-[32%] large:w-[90%] large:mx-auto large:mt-[50px] mb-[100px] large:!h-[fit-content] large:pt-[50px]">
+          class="before mb-[100px] mt-[10vh] flex h-[80vh] w-[32%] flex-col items-center justify-center rounded-3xl bg-main pb-[30px] before:left-[-5px] before:top-[-5px] large:mx-auto large:mt-[50px] large:!h-[fit-content] large:w-[90%] large:pt-[50px]"
+        >
           <div
-            class="flex justify-center items-center flex-col pt-[20%] large:pt-0">
+            class="flex flex-col items-center justify-center pt-[20%] large:pt-0"
+          >
             <img
               src="/imgs/logo.png"
               alt=""
-              class="w-[320px] large:w-[250px]" />
+              class="w-[320px] large:w-[250px]"
+            />
             <p
-              class="text-[55px] text-center relative bottom-7"
-              style="font-family: poppins">
+              class="relative bottom-7 text-center text-[55px]"
+              style="font-family: poppins"
+            >
               Modern Data
             </p>
           </div>
@@ -280,12 +291,13 @@ onMounted(() => {
     </section>
 
     <section id="section2" class="*:z-30">
-      <div class="flex large:flex-col h-[100vh] large:h-auto">
-        <div class="w-[37%] flex large:w-[100%]">
+      <div class="flex h-[100vh] large:h-auto large:flex-col">
+        <div class="flex w-[37%] large:w-[100%]">
           <div
-            class="min-w-[28%] bg-main min-h-[100%] large:!min-w-[15%] large:max-w-[15%]"></div>
-          <div class="bg-secondry text-white w-[72%] pb-[80px] large:w-[85%]">
-            <p class="text-[60px] mt-[60px] mb-[30px] font-bold pr-[15px]">
+            class="min-h-[100%] min-w-[28%] bg-main large:!min-w-[15%] large:max-w-[15%]"
+          ></div>
+          <div class="w-[72%] bg-secondry pb-[80px] text-white large:w-[85%]">
+            <p class="mb-[30px] mt-[60px] pr-[15px] text-[60px] font-bold">
               خدمات ما
             </p>
             <p class="pl-[30px] pr-[15px] text-[17px] leading-[30px]">
@@ -306,21 +318,26 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="w-[63%] flex items-center justify-center min-h-[100%] bg-[#F8F8F8] relative *:z-10 large:w-[100%] z-10 pb-[3%]">
+          class="relative z-10 flex min-h-[100%] w-[63%] items-center justify-center bg-[#F8F8F8] pb-[3%] *:z-10 large:w-[100%]"
+        >
           <div
-            class="absolute bg-main w-[90%] h-[80%] rotate-[11deg] bottom-[-53%] left-[-15%] rounded-3xl large:w-[500px] large:left-[-35%]"></div>
+            class="absolute bottom-[-53%] left-[-15%] h-[80%] w-[90%] rotate-[11deg] rounded-3xl bg-main large:left-[-35%] large:w-[500px]"
+          ></div>
           <div
-            class="border border-[#c0c0c0] rounded-3xl py-[20px] px-[45px] flex justify-between flex-wrap mobile:px-4 w-[80%] mr-[12%] ml-[8%] h-[80%] large:my-[50px] !min-h-[fit-content]">
+            class="ml-[8%] mr-[12%] flex h-[80%] !min-h-[fit-content] w-[80%] flex-wrap justify-between rounded-3xl border border-[#c0c0c0] px-[45px] py-[20px] mobile:px-4 large:my-[50px]"
+          >
             <div
-              class="bg-white w-[45%] mobile:w-[100%] mobile:mx-auto mobile:py-10 rounded-2xl mb-[15px] p-5"
+              class="mb-[15px] w-[45%] rounded-2xl bg-white p-5 mobile:mx-auto mobile:w-[100%] mobile:py-10"
               data-aos="fade-left"
               v-for="item in services"
               :data-aos-delay="item.delay"
-              :class="item.class">
+              :class="item.class"
+            >
               <p class="text-[25px] font-bold">{{ item.title }}</p>
               <p
-                class="leading-[30px] font-medium mt-[7px] text-[18px]"
-                :class="item.Pclass">
+                class="mt-[7px] text-[18px] font-medium leading-[30px]"
+                :class="item.Pclass"
+              >
                 {{ item.description }}
               </p>
             </div>
@@ -329,114 +346,129 @@ onMounted(() => {
       </div>
     </section>
 
-    <section id="section3" class="flex large:flex-col bg-secondry z-10 *:z-10">
-      <carousel
-        :items-to-show="1"
-        class="w-[92%] mx-auto block relative"
-        :wrap-around="true">
-        <slide
-          class="flex flex-col !w-[94%] !mx-[3%] [direction:rtl]"
-          v-for="item in crasoulData">
+    <section id="section3" class="z-10 flex bg-secondry *:z-10 large:flex-col">
+      <Swiper
+        :loop="true"
+        class="relative mx-auto block w-[92%]"
+        space-between="20"
+        :navigation="true"
+        :pagination="true"
+      >
+        <SwiperSlide v-for="item in crasoulData" :key="slide">
           <div
-            class="w-[100%] h-[clamp(300px,65vh,65vh)] large:h-auto pb-3 flex justify-between large:flex-col text-start pt-[60px] large:pt-0">
+            class="flex h-[clamp(300px,65vh,65vh)] justify-between pb-3 pt-[60px] text-start large:h-auto large:flex-col large:pt-0"
+          >
             <div
-              class="w-[40%] h-[99%] border-2 border-main rounded-3xl text-[#F8F8F8] pl-6 overflow-hidden large:w-[100%] large:!min-h-[450px] large:!max-h-[450px] large:mt-[40px]">
+              class="h-[99%] w-[40%] overflow-hidden rounded-3xl border-2 border-main pl-6 text-[#F8F8F8] large:mt-[40px] large:!max-h-[450px] large:!min-h-[450px] large:w-[100%]"
+            >
               <p
-                class="text-main text-[40px] mt-[20px] mb-[20px] font-[700] pr-[30px]">
+                class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-[700] text-main"
+              >
                 {{ item.title }}
               </p>
-              <p class="text-[15px] pr-[60px]">{{ item.description }}</p>
-              <ul class="list-disc pr-[85px] mt-[20px] large:!mb-[50px]">
+              <p class="pr-[60px] text-[15px]">{{ item.description }}</p>
+              <ul class="mt-[20px] list-disc pr-[85px] large:!mb-[50px]">
                 <li v-for="list in item.notes">{{ list }}</li>
               </ul>
             </div>
             <div
-              class="bg-white w-[55%] h-[100%] rounded-3xl flex justify-around *:w-[30%] *:max-w-[220px] *:h-[97%] pt-[1.5%] before:-top-[5px] before:-left-[8px] *:z-[100] large:w-[100%] large:mt-[50px] before large:min-h-[300px] large:max-h-[300px]">
+              class="before ove ml-2 flex h-[100%] w-[54%] justify-around rounded-3xl bg-white pt-[1.5%] *:z-[100] *:max-h-[97%] *:min-h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] large:mt-[50px] large:max-h-[300px] large:min-h-[300px] large:w-[98%]"
+            >
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />
               <img :src="item.banner3" alt="" />
             </div>
           </div>
           <div
-            class="h-[120px] mt-[47px] w-[101%] flex justify-between large:flex-col large:h-[350px]">
+            class="mt-[47px] flex h-[120px] w-[100%] justify-between large:h-[350px] large:flex-col"
+          >
             <div
-              class="w-[40%] h-[100%] border-2 border-main rounded-3xl text-[#F8F8F8] overflow-hidden flex justify-around *:w-[105px] *:h-[70px] items-center px-4 large:w-[100%] large:!h-[135px]">
-              <div class="flex justify-around relative pb-[20px] items-center">
+              class="flex h-[100%] w-[40%] items-center justify-around overflow-hidden rounded-3xl border-2 border-main px-4 text-[#F8F8F8] *:h-[70px] *:w-[105px] large:!h-[135px] large:w-[100%]"
+            >
+              <div class="relative flex items-center justify-around pb-[20px]">
                 <p
-                  class="absolute bottom-[2px] text-center w-[100%] large:text-[12px]">
+                  class="absolute bottom-[2px] w-[100%] text-center large:text-[12px]"
+                >
                   پلتفرم ها
                 </p>
                 <img
                   v-if="item.platform.web"
                   src="/imgs/chrome.svg"
-                  class="w-[34px] h-[26px] relative top-[2px]"
-                  alt="" />
+                  class="relative top-[2px] h-[26px] w-[34px]"
+                  alt=""
+                />
                 <img
                   src="/imgs/apple.svg"
-                  class="w-[34px] h-[38px]"
+                  class="h-[38px] w-[34px]"
                   alt=""
-                  v-if="item.platform.IOS" />
+                  v-if="item.platform.IOS"
+                />
                 <img
                   src="/imgs/android.svg"
-                  class="w-[24px] h-[28px]"
+                  class="h-[28px] w-[24px]"
                   alt=""
-                  v-if="item.platform.android" />
+                  v-if="item.platform.android"
+                />
               </div>
               <div class="relative !w-[130px]">
-                <p class="text-[28px] font-sans font-bold">
+                <p class="text-center font-sans text-[28px] font-bold">
                   {{ item.deployTime }}
                 </p>
                 <p
-                  class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                  class="absolute bottom-1 w-[100%] text-center text-[14px] large:text-[12px]"
+                >
                   مدت زمان اجرا (روز)
                 </p>
               </div>
               <div class="relative text-center">
-                <p class="text-[28px] font-sans font-bold">
+                <p class="font-sans text-[28px] font-bold">
                   {{ item.Sdate }}
                 </p>
                 <p
-                  class="absolute bottom-1 text-[14px] large:text-[12px] text-center w-[100%]">
+                  class="absolute bottom-1 w-[100%] text-center text-[14px] large:text-[12px]"
+                >
                   تاریخ شروع پروژه
                 </p>
               </div>
             </div>
             <div
-              class="relative w-[55%] h-[100%] before before:-bottom-[2px] before:-right-[4px] before:bg-white before:z-[-1] large:w-[100%] large:mt-[30px] large:h-[150px]">
+              class="before relative h-[100%] w-[55%] before:-bottom-[2px] before:-right-[4px] before:z-[-1] before:bg-white large:mt-[30px] large:h-[150px] large:w-[100%]"
+            >
               <img
                 src="/imgs/crasoul-banner.png"
-                class="z-[100] h-[98%] w-[100%] border-2 border-white rounded-3xl"
-                alt="" />
+                class="z-[100] h-[98%] w-[100%] rounded-3xl border-2 border-white"
+                alt=""
+              />
             </div>
           </div>
-        </slide>
-        <template #addons style="direction: ltr" class="bold">
-          <Navigation />
-        </template>
-      </carousel>
+        </SwiperSlide>
+      </Swiper>
     </section>
 
     <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
-      <div class="bg-secondry text-white min-w-[34%] z-10">
+      <div class="z-10 min-w-[34%] bg-secondry text-white">
         <p
-          class="text-[50px] mt-[100px] mb-[200px] pr-[70px] font-bold mobile:mb-[100px]">
+          class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"
+        >
           ارتباط با ما
         </p>
-        <p class="px-[30px] mb-[30px] text-[24px] leading-[40px]">
+        <p class="mb-[30px] px-[30px] text-[24px] leading-[40px]">
           گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه اول،واحد
           405
         </p>
         <p
-          class="[direction:ltr] pl-[30px] text-[20px] leading-[4r0px] mb-[50px]">
+          class="mb-[50px] pl-[30px] text-[20px] leading-[4r0px] [direction:ltr]"
+        >
           info@moderndata.ir <br />
           09382138446
         </p>
       </div>
 
-      <div class="min-w-[66%] relative">
+      <div class="relative min-w-[66%]">
         <div
-          class="bg-main absolute w-[80%] h-[80%] rounded-3xl rotate-[-13deg] z-[1] top-[-40%] left-[-12%]"></div>
-        <img src="/imgs/footer.png" alt="" class="w-[100%] h-[100%]" />
+          class="absolute left-[-12%] top-[-40%] z-[1] h-[80%] w-[80%] rotate-[-13deg] rounded-3xl bg-main"
+        ></div>
+        <img src="/imgs/footer.png" alt="" class="h-[100%] w-[100%]" />
       </div>
     </section>
   </div>
@@ -459,7 +491,7 @@ onMounted(() => {
   overflow-y: scroll;
 }
 body {
-  @apply [direction:rtl] m-0 p-0 overflow-hidden max-w-[100vw];
+  @apply m-0 max-w-[100vw] overflow-hidden p-0 [direction:rtl];
   font-family: shabnam;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
@@ -471,16 +503,11 @@ section {
   @apply large:h-auto;
 }
 .before {
-  @apply before:border-white before:rounded-3xl before:border-2 relative before:absolute before:w-[100%] before:h-[100%];
+  @apply relative before:absolute before:h-[100%] before:w-[100%] before:rounded-3xl before:border-2 before:border-white;
 }
-.carousel__icon {
-  @apply fill-main scale-[1.5] relative transition-all hover:scale-[1.6] bg-secondry rounded-full max-h-[30px];
-}
-.carousel__prev .carousel__icon {
-  @apply left-5;
-}
-.carousel__next .carousel__icon {
-  @apply right-5;
+.swiper-button-prev,
+.swiper-button-next {
+  @apply !text-main;
 }
 ::-webkit-scrollbar {
   display: none;

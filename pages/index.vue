@@ -327,7 +327,7 @@ onMounted(() => {
             class="ml-[8%] mr-[12%] flex h-[80%] !min-h-[fit-content] w-[80%] flex-wrap justify-between rounded-3xl border border-[#c0c0c0] px-[45px] py-[20px] mobile:px-4 large:my-[50px]"
           >
             <div
-              class="mb-[15px] w-[45%] rounded-2xl bg-white p-5 mobile:mx-auto mobile:w-[100%] mobile:py-10"
+              class="mb-[15px] w-[45%] rounded-2xl bg-white p-5 shadow-lg mobile:mx-auto mobile:w-[100%] mobile:py-10"
               data-aos="fade-left"
               v-for="item in services"
               :data-aos-delay="item.delay"
@@ -352,7 +352,6 @@ onMounted(() => {
         class="relative mx-auto block w-[92%]"
         space-between="20"
         :navigation="true"
-        :pagination="true"
       >
         <SwiperSlide v-for="item in crasoulData" :key="slide">
           <div
@@ -372,7 +371,7 @@ onMounted(() => {
               </ul>
             </div>
             <div
-              class="before ove ml-2 flex h-[100%] w-[54%] justify-around rounded-3xl bg-white pt-[1.5%] *:z-[100] *:max-h-[97%] *:min-h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] large:mt-[50px] large:max-h-[300px] large:min-h-[300px] large:w-[98%]"
+              class="before ml-2 flex h-[100%] w-[54%] justify-around rounded-3xl bg-white py-[10px] *:z-[100] *:max-h-[97%] *:min-h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] large:mt-[50px] large:max-h-[300px] large:min-h-[300px] large:w-[98%]"
             >
               <img :src="item.banner1" alt="" />
               <img :src="item.banner2" alt="" />

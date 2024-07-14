@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [],
-  theme: {
+    theme: {
     extend: {
       colors: {
         main: "#FFBF00",

@@ -1,4 +1,5 @@
 <script setup>
+import { ArrowDownIcon } from "@heroicons/vue/16/solid";
 let crasoulData = [
   {
     title: "کامیاب رهگشا رادین",
@@ -125,7 +126,7 @@ let crasoulData = [
     Sdate: 1402,
   },
 ];
-let services = [
+let properties = [
   {
     title: "هوش مصنوعی",
     description:
@@ -223,50 +224,21 @@ onMounted(() => {
           class="absolute right-[-15%] top-[-130px] h-[50%] w-[72%] max-w-[1250px] rotate-[11deg] rounded-3xl bg-main"
         ></div>
         <div
-          class="z-20 mt-[10vh] flex h-[80vh] w-[60%] flex-col justify-end pb-[12px] text-white large:h-[58%] large:w-[100%]"
+          class="relative z-20 mt-[10vh] flex h-[80vh] w-[60%] flex-col justify-center pb-[12px] text-white large:h-[58%] large:w-[100%]"
         >
           <p
-            class="mb-[70px] text-center text-[75px] font-bold large:text-[60px]"
+            class="mb-[70px] text-center text-[100px] font-bold large:text-[60px]"
           >
-            داده پردازان
-            <br />
-            پارسیان نامی
+            مدرن دیتا <br />
+            <p class="text-[20px]">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
+
+            </p>
           </p>
-          <div
-            class="mt-5 flex items-end justify-between px-[15%] *:h-[80px] large:px-9"
-          >
-            <div>
-              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
-                شناسه ملی
-              </p>
-              <br />
-              <p
-                class="relative bottom-[26px] font-sans text-[32px] large:text-[18px]"
-              >
-                14006683500
-              </p>
-            </div>
-            <div>
-              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
-                شماره ثبت
-              </p>
-              <br />
-              <p
-                class="relative bottom-[26px] font-sans text-[32px] large:text-[18px]"
-              >
-                12047
-              </p>
-            </div>
-            <div>
-              <p class="text-[32px] font-extrabold text-main large:text-[20px]">
-                مدیرعامل
-              </p>
-              <br />
-              <p class="relative bottom-[26px] text-[32px] large:text-[18px]">
-                فاطمه فتحی
-              </p>
-            </div>
-          </div>
+          <ArrowDownIcon
+            @click="scrollToSection(1)"
+            class="absolute bottom-0 right-[50%] hidden size-[45px] translate-x-[50%] animate-bounce cursor-pointer rounded-full bg-main p-1 text-black lg:block"
+          ></ArrowDownIcon>
         </div>
         <div
           class="before mb-[100px] mt-[10vh] flex h-[80vh] w-[32%] flex-col items-center justify-center rounded-3xl bg-main pb-[30px] before:left-[-5px] before:top-[-5px] large:mx-auto large:mt-[50px] large:!h-[fit-content] large:w-[90%] large:pt-[50px]"
@@ -329,7 +301,7 @@ onMounted(() => {
             <div
               class="mb-[15px] w-[45%] rounded-2xl bg-white p-5 shadow-lg mobile:mx-auto mobile:w-[100%] mobile:py-10"
               data-aos="fade-left"
-              v-for="item in services"
+              v-for="item in properties"
               :data-aos-delay="item.delay"
               :class="item.class"
             >
@@ -346,7 +318,10 @@ onMounted(() => {
       </div>
     </section>
 
-    <section id="section3" class="z-10 flex bg-secondry *:z-10 large:flex-col">
+    <section id="section3" class="z-10 bg-secondry *:z-10 large:flex-col">
+      <p class="mx-auto mt-4 block w-[91%] text-[30px] font-bold text-main">
+        نمونه کار ها
+      </p>
       <Swiper
         :loop="true"
         class="relative mx-auto block w-[92%]"
@@ -355,10 +330,10 @@ onMounted(() => {
       >
         <SwiperSlide v-for="item in crasoulData" :key="slide">
           <div
-            class="flex h-[clamp(300px,65vh,65vh)] justify-between pb-3 pt-[60px] text-start large:h-auto large:flex-col large:pt-0"
+            class="flex h-[clamp(300px,65vh,65vh)] justify-between pb-3 pt-[15px] text-start large:h-auto large:flex-col large:pt-0"
           >
             <div
-              class="h-[99%] w-[40%] overflow-hidden rounded-3xl border-2 border-main pl-6 text-[#F8F8F8] large:mt-[40px] large:!max-h-[450px] large:!min-h-[450px] large:w-[100%]"
+              class="h-[99%] w-[40%] overflow-hidden rounded-3xl border-2 border-main pl-6 text-[#F8F8F8] large:mt-[20px] large:!max-h-[450px] large:!min-h-[450px] large:w-[100%]"
             >
               <p
                 class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-[700] text-main"
@@ -429,6 +404,11 @@ onMounted(() => {
                   تاریخ شروع پروژه
                 </p>
               </div>
+              <div class="flex items-center">
+                <button class="h-[55px] rounded-lg bg-main p-2 text-black">
+                  پیش نمایش
+                </button>
+              </div>
             </div>
             <div
               class="before relative h-[100%] w-[55%] before:-bottom-[2px] before:-right-[4px] before:z-[-1] before:bg-white large:mt-[30px] large:h-[150px] large:w-[100%]"
@@ -444,7 +424,46 @@ onMounted(() => {
       </Swiper>
     </section>
 
-    <section id="section4" class="flex min-h-[100vh] mobile:flex-col">
+    <section id="section4" class="z-10 bg-secondry *:z-10 large:flex-col">
+      <p class="mx-auto mt-10 block w-[91%] text-[30px] font-bold text-main">
+        خدمات ما
+      </p>
+      <Swiper
+        :loop="true"
+        class="relative mx-auto block w-[92%]"
+        space-between="20"
+        :navigation="true"
+      >
+        <SwiperSlide v-for="item in crasoulData" :key="slide">
+          <div
+            class="flex h-[clamp(300px,85vh,85vh)] justify-between pb-7 pt-[15px] text-start large:h-auto large:flex-col large:pt-0"
+          >
+            <div
+              class="h-[99%] w-[40%] overflow-hidden rounded-3xl border-2 border-main pl-6 text-[#F8F8F8] large:mt-[20px] large:!max-h-[450px] large:!min-h-[450px] large:w-[100%]"
+            >
+              <p
+                class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-[700] text-main"
+              >
+                {{ item.title }}
+              </p>
+              <p class="pr-[60px] text-[15px]">{{ item.description }}</p>
+              <ul class="mt-[20px] list-disc pr-[85px] large:!mb-[50px]">
+                <li v-for="list in item.notes">{{ list }}</li>
+              </ul>
+            </div>
+            <div
+              class="before ml-2 flex h-[100%] w-[54%] justify-around rounded-3xl bg-white py-[10px] *:z-[100] *:max-h-[97%] *:min-h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] large:mt-[50px] large:max-h-[300px] large:min-h-[300px] large:w-[98%]"
+            >
+              <img :src="item.banner1" alt="" />
+              <img :src="item.banner2" alt="" />
+              <img :src="item.banner3" alt="" />
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </section>
+
+    <section id="section5" class="flex min-h-[100vh] mobile:flex-col">
       <div class="z-10 min-w-[34%] bg-secondry text-white">
         <p
           class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"

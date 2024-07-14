@@ -1,0 +1,42 @@
+@import url("vue-fullpage.js/dist/style.css");
+.fp-watermark {
+  @apply invisible;
+}
+@font-face {
+  font-family: poppins;
+  src: url(/font/Poppins-Bold.ttf) format(truetype);
+}
+@font-face {
+  font-family: shabnam;
+  src: url(/font/Shabnam-FD.ttf) format(truetype);
+}
+* {
+  @apply !max-w-[100vw];
+}
+.__nuxt,
+.__nuxt > div {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+body {
+  @apply m-0 max-w-[100vw] overflow-hidden p-0 [direction:rtl];
+  font-family: shabnam;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  @apply large:h-auto;
+}
+.before {
+  @apply relative before:absolute before:h-[100%] before:w-[100%] before:rounded-3xl before:border-2 before:border-white;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  @apply !text-main;
+}
+::-webkit-scrollbar {
+  display: none;
+}

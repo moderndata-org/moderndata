@@ -156,11 +156,30 @@ let properties = [
 ];
 </script>
 <template>
-  <ClientOnly>
+  <div class="pt-[50px]">
+    <ul
+      id="menu"
+      class="fixed top-0 z-[2000] flex w-full gap-2 bg-black p-2 text-white *:rounded-lg *:bg-main *:p-1.5 *:text-black"
+    >
+      <li data-menuanchor="introduction"><a href="#1">معرفی</a></li>
+      <li data-menuanchor="properties"><a href="#2">ویژگی ها</a></li>
+      <li data-menuanchor="work-samples"><a href="#3">نمونه کار ها</a></li>
+      <li data-menuanchor="services"><a href="#4">خدمات</a></li>
+      <li data-menuanchor="contact-us"><a href="#5">ارتباط با ما</a></li>
+    </ul>
     <full-page
       ref="fullpage"
       :options="{
         licenseKey: 'YOUR_KEY_HERE',
+        menu: '#menu',
+        easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
+        anchors: [
+          'introduction',
+          'properties',
+          'work-samples',
+          'services',
+          'contact-us',
+        ],
         menu: '#menu',
       }"
       id="fullpage"
@@ -168,10 +187,9 @@ let properties = [
       <div
         class="absolute left-[-45%] top-[170%] z-[1] h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main large:hidden"
       ></div>
-      <section class="section">
+      <section class="section lg:h-[100vh]">
         <div
           class="flex w-[100%] bg-secondry large:flex-col"
-          style="-webkit-overflow-scrolling: touch; overflow-y: scroll"
         >
           <div
             class="absolute right-[-15%] top-[-130px] h-[50%] w-[72%] max-w-[1250px] rotate-[11deg] rounded-3xl bg-main"
@@ -213,7 +231,7 @@ let properties = [
           </div>
         </div>
       </section>
-      <section class="section relative *:z-30 lg:h-[100vh] ">
+      <section class="section relative *:z-30 lg:h-[100vh]">
         <div class="flex h-[100vh] large:h-auto large:flex-col">
           <div class="flex w-[37%] large:w-[100%]">
             <div
@@ -241,7 +259,7 @@ let properties = [
             </div>
           </div>
           <div
-            class="relative z-10 flex min-h-[100%] w-[63%] items-center justify-center bg-[#F8F8F8] pb-[3%] *:z-10 large:w-[100%]"
+            class="relative z-10 flex min-h-[100%] w-[63%] items-center justify-center overflow-hidden bg-[#F8F8F8] pb-[3%] *:z-10 large:w-[100%]"
           >
             <div
               class="absolute bottom-[-53%] left-[-15%] h-[80%] w-[90%] rotate-[11deg] rounded-3xl bg-main large:left-[-35%] large:w-[500px]"
@@ -266,9 +284,7 @@ let properties = [
           </div>
         </div>
       </section>
-      <section
-        class="section h-[100vh] z-10 bg-secondry *:z-10 large:flex-col"
-      >
+      <section class="section z-10 h-[100vh] bg-secondry *:z-10 large:flex-col">
         <p class="mx-auto mt-4 block w-[91%] text-[30px] font-bold text-main">
           نمونه کار ها
         </p>
@@ -413,32 +429,34 @@ let properties = [
           </SwiperSlide>
         </Swiper>
       </section>
-      <section class="section flex min-h-[100vh] mobile:flex-col">
-        <div class="z-10 min-w-[34%] bg-secondry text-white">
-          <p
-            class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"
-          >
-            ارتباط با ما
-          </p>
-          <p class="mb-[30px] px-[30px] text-[24px] leading-[40px]">
-            گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه اول،واحد
-            405
-          </p>
-          <p
-            class="mb-[50px] pl-[30px] text-[20px] leading-[4r0px] [direction:ltr]"
-          >
-            info@moderndata.ir <br />
-            09382138446
-          </p>
-        </div>
+      <section class="section">
+        <div class="relative flex h-[100vh] mobile:flex-col">
+          <div class="z-[100] min-w-[34%] bg-secondry text-white">
+            <p
+              class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"
+            >
+              ارتباط با ما
+            </p>
+            <p class="mb-[30px] px-[30px] text-[24px] leading-[40px]">
+              گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه
+              اول،واحد 405
+            </p>
+            <p
+              class="mb-[50px] pl-[30px] text-[20px] leading-[4r0px] [direction:ltr]"
+            >
+              info@moderndata.ir <br />
+              09382138446
+            </p>
+          </div>
 
-        <div class="relative min-w-[66%]">
-          <div
-            class="absolute left-[-12%] top-[-40%] z-[1] h-[80%] w-[80%] rotate-[-13deg] rounded-3xl bg-main"
-          ></div>
-          <img src="/imgs/footer.png" alt="" class="h-[100%] w-[100%]" />
+          <div class="relative min-w-[66%]">
+            <div
+              class="absolute left-[-12%] top-[-40%] z-[1] h-[80%] w-[80%] rotate-[-13deg] rounded-3xl bg-main"
+            ></div>
+            <img src="/imgs/footer.png" alt="" class="h-[100%] w-[100%]" />
+          </div>
         </div>
       </section>
     </full-page>
-  </ClientOnly>
+  </div>
 </template>

@@ -1,4 +1,5 @@
 <script setup>
+import { Navigation } from "swiper/modules";
 let fullpage = ref();
 import { ArrowDownIcon } from "@heroicons/vue/16/solid";
 let crasoulData = [
@@ -282,6 +283,7 @@ let properties = [
           class="relative mx-auto block w-[92%]"
           space-between="20"
           :navigation="true"
+          :modules="[Navigation]"
         >
           <SwiperSlide v-for="item in crasoulData" :key="slide">
             <div
@@ -390,6 +392,7 @@ let properties = [
           class="relative mx-auto block w-[92%]"
           space-between="20"
           :navigation="true"
+          :modules="[Navigation]"
         >
           <SwiperSlide v-for="item in crasoulData" :key="slide">
             <div

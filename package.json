@@ -12,8 +12,10 @@
   "dependencies": {
     "@heroicons/vue": "^2.1.5",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
     "nuxt-swiper": "^1.2.2",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-fullpage.js": "^0.2.17",
     "vue-router": "^4.3.0"

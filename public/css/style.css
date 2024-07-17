@@ -18,7 +18,7 @@ body {
   @apply relative before:absolute before:h-[100%] before:w-[100%] before:rounded-3xl before:border-2 before:border-white;
 }
 .section-container {
-  @apply relative min-h-screen overflow-hidden lg:h-screen bg-secondry;
+  @apply bg-secondary relative min-h-screen overflow-hidden lg:h-screen;
 }
 .skeleton {
   @apply animate-pulse rounded-xl bg-gray-400;

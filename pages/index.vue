@@ -1,6 +1,8 @@
-<script setup>
+<script setup lang="ts">
+import { homeStore } from "~/script/store/home";
 import { Navigation } from "swiper/modules";
 let fullpage = ref();
+let store = homeStore();
 import { ArrowDownIcon } from "@heroicons/vue/16/solid";
 let crasoulData = [
   {
@@ -155,6 +157,9 @@ let properties = [
     delay: 1200,
   },
 ];
+onMounted(() => {
+  store.get_projects();
+});
 </script>
 <template>
   <ul
@@ -179,6 +184,7 @@ let properties = [
         'services',
         'contact-us',
       ],
+      licenseKey: 'xxxxxxxxxxxxxxxxxxxxxxxxx',
       menu: '#menu',
     }"
     id="fullpage"
@@ -223,7 +229,7 @@ let properties = [
       <div class="section-container flex flex-col lg:flex-row">
         <div class="flex w-full lg:w-[37%]">
           <div class="min-h-full w-[15%] bg-main lg:w-[28%]" />
-          <div class="w-[85%] bg-secondry pb-[80px] text-white lg:w-[72%]">
+          <div class="bg-secondary w-[85%] pb-[80px] text-white lg:w-[72%]">
             <p class="mb-[30px] mt-[60px] pr-[15px] text-[60px] font-bold">
               خدمات ما
             </p>
@@ -278,7 +284,7 @@ let properties = [
         <p class="mx-auto block w-[91%] text-[30px] font-bold text-main">
           نمونه کار ها
         </p>
-        <div v-if="true" class="mx-auto block w-[95%]">
+        <div v-if="!store.isProjectDataReceived" class="mx-auto block w-[95%]">
           <div class="skeleton h-[50vh]" />
           <div class="skeleton mt-[5vh] h-[30vh]" />
         </div>
@@ -290,7 +296,7 @@ let properties = [
           :navigation="true"
           :modules="[Navigation]"
         >
-          <SwiperSlide v-for="item in crasoulData" :key="slide">
+          <SwiperSlide v-for="item in store.projects" :key="slide">
             <div
               class="flex flex-col justify-between pb-3 lg:h-[clamp(300px,65vh,65vh)] lg:flex-row lg:pt-[10px]"
             >
@@ -300,19 +306,17 @@ let properties = [
                 <p
                   class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-bold text-main"
                 >
-                  {{ item.title }}
+                  {{ item.name }}
                 </p>
                 <p class="pr-[60px] text-[15px]">{{ item.description }}</p>
                 <ul class="mb-12 mt-[20px] list-disc pr-[85px] lg:mb-0">
-                  <li v-for="list in item.notes">{{ list }}</li>
+                  <li v-for="list in item.features">{{ list }}</li>
                 </ul>
               </div>
               <div
                 class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] lg:mt-0 lg:h-full lg:w-[54%]"
               >
-                <img :src="item.banner1" />
-                <img :src="item.banner2" />
-                <img :src="item.banner3" />
+                <img v-for="i in item.images" :src="i.image" />
               </div>
             </div>
             <div
@@ -330,24 +334,24 @@ let properties = [
                     پلتفرم ها
                   </p>
                   <img
-                    v-if="item.platform.web"
+                    v-if="item.platform.some((some) => some.name === 'WEB')"
                     src="/imgs/chrome.svg"
                     class="relative top-[2px] h-[26px] w-[34px]"
                   />
                   <img
                     src="/imgs/apple.svg"
                     class="h-[38px] w-[34px]"
-                    v-if="item.platform.IOS"
+                    v-if="item.platform.some((some) => some.name === 'IOS')"
                   />
                   <img
                     src="/imgs/android.svg"
                     class="h-[28px] w-[24px]"
-                    v-if="item.platform.android"
+                    v-if="item.platform.some((some) => some.name === 'Android')"
                   />
                 </div>
                 <div class="relative !w-[130px]">
                   <p class="text-center font-sans text-[28px] font-bold">
-                    {{ item.deployTime }}
+                    {{ item.days }}
                   </p>
                   <p
                     class="absolute bottom-1 w-full text-center text-xs lg:text-sm"
@@ -357,7 +361,7 @@ let properties = [
                 </div>
                 <div class="relative text-center">
                   <p class="font-sans text-[28px] font-bold">
-                    {{ item.Sdate }}
+                    {{ item.start_year }}
                   </p>
                   <p
                     class="absolute bottom-1 w-full text-center text-xs lg:text-sm"
@@ -392,7 +396,7 @@ let properties = [
         <p class="mx-auto block w-[91%] text-[30px] font-bold text-main">
           خدمات ما
         </p>
-        <div v-if="true" class="mx-auto block w-[95%]">
+        <div v-if="false" class="mx-auto block w-[95%]">
           <div class="skeleton h-[50vh]" />
           <div class="skeleton mt-[5vh] h-[30vh]" />
         </div>
@@ -435,9 +439,9 @@ let properties = [
     </section>
     <section class="section">
       <div class="section-container flex flex-col sm:flex-row">
-        <div class="z-[100] bg-secondry text-white sm:w-[34%]">
+        <div class="bg-secondary z-[100] text-white sm:w-[34%]">
           <p
-            class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"
+            class="mb-[100px] mt-[100px] pr-[70px] text-[50px] font-bold sm:mb-[200px]"
           >
             ارتباط با ما
           </p>

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-aos", "nuxt-swiper", "@nuxtjs/tailwindcss"],
+  modules: ["@pinia/nuxt", "nuxt-swiper", "@nuxtjs/tailwindcss"],
   css: ["public/css/style.css"],
   app: {
     head: {

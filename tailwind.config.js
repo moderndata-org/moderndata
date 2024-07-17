@@ -5,13 +5,8 @@ export default {
     extend: {
       colors: {
         main: "#FFBF00",
-        secondry: "#141516"
+        secondary: "#141516"
       },
-      screens: {
-        mobile: {max: "650px"},
-        tablet: {max: "768px"},
-        large: {max: "950px"}
-      }
     }
   },
   screens: {},

@@ -7,11 +7,8 @@
   font-family: shabnam;
   src: url(/font/Shabnam-FD.ttf) format(truetype);
 }
-* {
-  @apply !max-w-[100vw];
-}
 body {
-  @apply m-0 max-w-[100vw] overflow-hidden p-0 [direction:rtl];
+  @apply [direction:rtl];
   font-family: shabnam;
 }
 ::-webkit-scrollbar {
@@ -19,6 +16,12 @@ body {
 }
 .before {
   @apply relative before:absolute before:h-[100%] before:w-[100%] before:rounded-3xl before:border-2 before:border-white;
+}
+.section-container {
+  @apply relative min-h-screen overflow-hidden lg:h-screen bg-secondry;
+}
+.skeleton {
+  @apply animate-pulse rounded-xl bg-gray-400;
 }
 .swiper-button-prev,
 .swiper-button-next {

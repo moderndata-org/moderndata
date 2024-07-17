@@ -184,7 +184,7 @@ let properties = [
     id="fullpage"
   >
     <section class="section">
-      <div class="flex w-full flex-col bg-secondry lg:h-screen lg:flex-row">
+      <div class="section-container flex flex-col lg:flex-row">
         <div
           class="absolute right-[-15%] top-[-130px] h-[50%] w-[72%] max-w-[1250px] rotate-[11deg] rounded-3xl bg-main"
         ></div>
@@ -220,7 +220,7 @@ let properties = [
       </div>
     </section>
     <section class="section">
-      <div class="flex flex-col lg:h-screen lg:flex-row">
+      <div class="section-container flex flex-col lg:flex-row">
         <div class="flex w-full lg:w-[37%]">
           <div class="min-h-full w-[15%] bg-main lg:w-[28%]" />
           <div class="w-[85%] bg-secondry pb-[80px] text-white lg:w-[72%]">
@@ -271,14 +271,19 @@ let properties = [
       </div>
     </section>
     <section class="section">
-      <div class="relative bg-secondry pt-[50px] lg:h-screen">
+      <div class="section-container pt-[50px]">
         <div
-          class="absolute -top-[25%] left-[-45%] z-[1] hidden h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main lg:block"
+          class="absolute -top-[25%] left-[-45%] z-0 hidden h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main lg:block"
         ></div>
         <p class="mx-auto block w-[91%] text-[30px] font-bold text-main">
           نمونه کار ها
         </p>
+        <div v-if="true" class="mx-auto block w-[95%]">
+          <div class="skeleton h-[50vh]" />
+          <div class="skeleton mt-[5vh] h-[30vh]" />
+        </div>
         <Swiper
+          v-else
           :loop="true"
           class="relative mx-auto block w-[92%]"
           space-between="20"
@@ -380,14 +385,19 @@ let properties = [
       </div>
     </section>
     <section class="section">
-      <div class="relative bg-secondry pt-[50px] lg:h-screen">
+      <div class="section-container pt-[50px]">
         <div
-          class="absolute -top-[25%] left-[-45%] z-[1] hidden h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main lg:block"
-        ></div>
+          class="absolute -top-[25%] left-[-45%] z-0 hidden h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main lg:block"
+        />
         <p class="mx-auto block w-[91%] text-[30px] font-bold text-main">
           خدمات ما
         </p>
+        <div v-if="true" class="mx-auto block w-[95%]">
+          <div class="skeleton h-[50vh]" />
+          <div class="skeleton mt-[5vh] h-[30vh]" />
+        </div>
         <Swiper
+          v-else
           :loop="true"
           class="relative mx-auto block w-[92%]"
           space-between="20"
@@ -424,7 +434,7 @@ let properties = [
       </div>
     </section>
     <section class="section">
-      <div class="relative flex flex-col sm:flex-row lg:h-screen">
+      <div class="section-container flex flex-col sm:flex-row">
         <div class="z-[100] bg-secondry text-white sm:w-[34%]">
           <p
             class="mb-[200px] mt-[100px] pr-[70px] text-[50px] font-bold mobile:mb-[100px]"

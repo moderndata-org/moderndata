@@ -201,7 +201,7 @@ let properties = [
           <ArrowDownIcon
             class="absolute bottom-0 right-[50%] hidden size-[45px] translate-x-[50%] animate-bounce cursor-pointer rounded-full bg-main p-1 text-black lg:block"
             @click="fullpage.api.moveTo(2)"
-          ></ArrowDownIcon>
+          />
         </div>
         <div
           class="before mx-auto mb-[100px] mt-[50px] flex h-fit w-[90%] flex-col items-center justify-center rounded-3xl bg-main pb-[30px] pt-[50px] before:left-[-5px] before:top-[-5px] lg:mt-[10vh] lg:h-[80vh] lg:w-[32%] lg:pt-0"
@@ -253,7 +253,7 @@ let properties = [
             class="z-10 my-[50px] ml-[8%] mr-[12%] flex h-[80%] min-h-fit w-[80%] flex-wrap justify-between rounded-3xl border border-[#c0c0c0] px-4 py-[20px] sm:px-[45px] lg:my-0"
           >
             <div
-              class="mb-[15px] w-full rounded-2xl bg-white p-5 py-10 shadow-lg sm:w-[45%]"
+              class="property-container mb-[15px] w-full rounded-2xl bg-white p-5 py-10 opacity-0 shadow-lg sm:w-[45%]"
               v-for="item in properties"
               :class="item.class"
             >

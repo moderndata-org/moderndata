@@ -27,3 +27,25 @@ body {
 .fp-watermark {
   @apply invisible;
 }
+.section.active .property-container {
+  animation: float-left 250ms ease-in 1 forwards;
+}
+.section.active .property-container:nth-child(2) {
+  animation-delay: 200ms;
+}
+.section.active .property-container:nth-child(3) {
+  animation-delay: 400ms;
+}
+.section.active .property-container:nth-child(4) {
+  animation-delay: 600ms;
+}
+@keyframes float-left {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

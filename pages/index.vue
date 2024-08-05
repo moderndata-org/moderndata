@@ -453,7 +453,7 @@ onMounted(() => {
             class="mb-[50px] pl-[30px] text-[20px] leading-[4r0px] [direction:ltr]"
           >
             info@moderndata.ir <br />
-            09382138446
+            09376908446
           </p>
         </div>
         <div class="relative sm:w-[66%]">

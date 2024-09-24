@@ -202,8 +202,7 @@ onMounted(() => {
           >
             مدرن دیتا <br />
             <p class="text-[20px]">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
-            </p>
+              راهکارهای هوشمند برای چالش‌های پیچیده            </p>
           </div>
           <ArrowDownIcon
             class="absolute bottom-0 right-[50%] hidden size-[45px] translate-x-[50%] animate-bounce cursor-pointer rounded-full bg-main p-1 text-black lg:block"

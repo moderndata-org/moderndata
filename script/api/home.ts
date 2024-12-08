@@ -1,5 +1,5 @@
 let baseURL = "https://api.moderndata.ir";
-let getProjects = () => {
+let GetProjects = () => {
   let res = $fetch(baseURL + "/company/projects", {
     headers: {
       Authorization: "Token d0c16be89a4de1c873da3680c524a5184397d626",
@@ -7,7 +7,7 @@ let getProjects = () => {
   });
   return res;
 };
-let getServices = () => {
+let GetServices = () => {
   let res = $fetch(baseURL + "/company/services", {
     headers: {
       Authorization: "Token d0c16be89a4de1c873da3680c524a5184397d626",
@@ -15,4 +15,4 @@ let getServices = () => {
   });
   return res;
 };
-export { getProjects, getServices };
+export { GetProjects, GetServices };

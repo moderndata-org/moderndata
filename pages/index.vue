@@ -185,7 +185,7 @@ onMounted(() => {
                 </ul>
               </div>
               <div
-                class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] lg:mt-0 lg:h-full lg:w-[54%]"
+                class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[220px] *:rounded-xl before:-left-[8px] before:-top-[5px] lg:mt-0 lg:h-full lg:w-[54%]"
               >
                 <img v-for="i in item.images" :src="i.image" />
               </div>

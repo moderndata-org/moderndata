@@ -23,13 +23,8 @@ body {
 .skeleton {
   @apply animate-pulse rounded-xl bg-gray-400/65;
 }
-.swiper-button-prev,
-.swiper-button-next {
-  @apply !text-main;
-}
-
 .swiper-pagination {
-  @apply lg:!-bottom-12 flex justify-center gap-2;
+  @apply !-bottom-0 flex justify-center gap-2 lg:!bottom-0;
 }
 .dot-navigation {
   @apply size-3.5 rounded-full bg-white shadow-lg;

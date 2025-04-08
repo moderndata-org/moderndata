@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { homeStore } from "~/script/store/home";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 let fullpage = ref();
 let store = homeStore();
 import { ArrowDownIcon } from "@heroicons/vue/16/solid";
@@ -164,10 +164,9 @@ onMounted(() => {
         <Swiper
           v-else
           :loop="true"
-          class="relative mx-auto block w-[92%]"
+          class="relative mx-auto block w-[92%] !pb-10"
           space-between="20"
-          :navigation="true"
-          :modules="[Navigation, Autoplay, Pagination]"
+          :modules="[Autoplay, Pagination]"
           :autoplay="{
             delay: 3000,
             disableOnInteraction: false,
@@ -184,7 +183,7 @@ onMounted(() => {
               class="flex flex-col justify-between pb-3 lg:h-[clamp(300px,65vh,65vh)] lg:flex-row lg:pb-0 lg:pt-[10px]"
             >
               <div
-                class="mt-5 h-fit w-full overflow-hidden rounded-3xl border-2 border-main pb-8 pl-6 text-white lg:mt-0 lg:h-full lg:w-[40%]"
+                class="mt-5 h-[500px] w-full overflow-y-auto rounded-3xl border-2 border-main pb-8 pl-6 text-white lg:mt-0 lg:h-full lg:w-[40%]"
               >
                 <p
                   class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-bold text-main"
@@ -196,7 +195,7 @@ onMounted(() => {
                   <li v-for="list in item.features.split(',')">{{ list }}</li>
                 </ul>
                 <div
-                  class="mt-8 flex items-center pr-[60px]"
+                  class="mt-6 flex items-center pr-[60px]"
                   v-if="item.preview_link !== '-'"
                 >
                   <nuxt-link

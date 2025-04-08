@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { homeStore } from "~/script/store/home";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 let fullpage = ref();
 let store = homeStore();
 import { ArrowDownIcon } from "@heroicons/vue/16/solid";
@@ -31,6 +31,10 @@ let properties = [
     delay: 1200,
   },
 ];
+let scrollToSection = (section: number = 2) =>
+  document
+    .getElementById(`section-${section}`)
+    ?.scrollIntoView({ behavior: "smooth" });
 onMounted(() => {
   store.getProjects();
   // fullpage?.value.api?.setAutoScrolling(false);
@@ -76,11 +80,11 @@ onMounted(() => {
           </div>
           <ArrowDownIcon
             class="absolute bottom-0 right-[50%] hidden size-[45px] translate-x-[50%] animate-bounce cursor-pointer rounded-full bg-main p-1 text-black lg:block"
-            @click="fullpage.api.moveTo(2)"
+            @click="scrollToSection(2)"
           />
         </div>
         <div
-          class="before mx-auto mb-[100px] mt-[50px] flex h-fit w-[90%] flex-col items-center justify-center rounded-3xl bg-main pb-[30px] pt-[50px] before:left-[-5px] before:top-[-5px] lg:mt-[10vh] lg:h-[80vh] lg:w-[32%] lg:pt-0"
+          class="before mx-auto mb-[100px] mt-[50px] flex h-fit w-[87%] flex-col items-center justify-center rounded-3xl bg-main pb-[30px] pt-[50px] before:left-[-5px] before:top-[-5px] lg:mt-[10vh] lg:h-[80vh] lg:w-[32%] lg:pt-0"
         >
           <div class="flex flex-col items-center justify-center lg:pt-[20%]">
             <img src="/imgs/logo.png" class="w-[250px] lg:w-[320px]" />
@@ -94,7 +98,7 @@ onMounted(() => {
         </div>
       </div>
     </section>
-    <section class="section">
+    <section id="section-2" class="section">
       <div class="section-container flex flex-col lg:flex-row">
         <div class="flex w-full lg:w-[37%]">
           <div class="min-h-full w-[15%] bg-main lg:w-[28%]" />
@@ -163,7 +167,17 @@ onMounted(() => {
           class="relative mx-auto block w-[92%]"
           space-between="20"
           :navigation="true"
-          :modules="[Navigation]"
+          :modules="[Navigation, Autoplay, Pagination]"
+          :autoplay="{
+            delay: 3000,
+            disableOnInteraction: false,
+            reverseDirection: true,
+          }"
+          :pagination="{
+            clickable: true,
+            bulletActiveClass: 'active-dot-navigation',
+            bulletClass: 'dot-navigation',
+          }"
         >
           <SwiperSlide v-for="item in store.projects">
             <div

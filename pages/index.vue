@@ -33,22 +33,20 @@ let properties = [
 ];
 onMounted(() => {
   store.getProjects();
+  // fullpage?.value.api?.setAutoScrolling(false);
 });
 </script>
 <template>
-  <ul
+  <!-- <ul
     id="menu"
     class="fixed top-0 z-[2000] flex w-full gap-2 bg-black p-2 text-white *:rounded-lg *:bg-main *:p-1.5 *:text-black"
   >
     <li data-menuanchor="introduction"><a href="#1">معرفی</a></li>
     <li data-menuanchor="properties"><a href="#2">ویژگی ها</a></li>
     <li data-menuanchor="work-samples"><a href="#3">نمونه کار ها</a></li>
-    <!-- <li data-menuanchor="services"><a href="#4">خدمات</a></li> -->
+    <li data-menuanchor="services"><a href="#4">خدمات</a></li> 
     <li data-menuanchor="contact-us"><a href="#4">ارتباط با ما</a></li>
-  </ul>
-  <full-page
-    ref="fullpage"
-    :options="{
+      :options="{
       menu: '#menu',
       easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
       anchors: [
@@ -60,8 +58,8 @@ onMounted(() => {
       ],
       licenseKey: 'xxxxxxxxxxxxxxxxxxxxxxxxx',
     }"
-    id="fullpage"
-  >
+  </ul> -->
+  <div ref="fullpage" id="fullpage">
     <section class="section">
       <div class="section-container flex flex-col lg:flex-row">
         <div
@@ -122,13 +120,13 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-[#F8F8F8] pb-[3%] lg:w-[63%]"
+          class="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-secondary pb-[3%] lg:w-[63%] lg:bg-[#F8F8F8]"
         >
           <div
             class="absolute bottom-[-53%] left-[-35%] h-[80%] w-[500px] rotate-[11deg] rounded-3xl bg-main lg:left-[-15%] lg:w-[90%]"
           ></div>
           <div
-            class="z-10 my-[50px] ml-[8%] mr-[12%] flex h-[80%] min-h-fit w-[80%] flex-wrap justify-between rounded-3xl border border-[#c0c0c0] px-4 py-[20px] sm:px-[45px] lg:my-0"
+            class="z-10 my-[50px] ml-[8%] mr-[12%] flex h-[80%] min-h-fit w-[80%] flex-wrap justify-between rounded-3xl border-[#c0c0c0] px-4 py-[20px] sm:px-[45px] lg:my-0 lg:border"
           >
             <div
               class="property-container mb-[15px] w-full rounded-2xl bg-white p-5 py-10 opacity-0 shadow-lg sm:w-[45%]"
@@ -169,10 +167,10 @@ onMounted(() => {
         >
           <SwiperSlide v-for="item in store.projects">
             <div
-              class="flex flex-col justify-between pb-3 lg:h-[clamp(300px,65vh,65vh)] lg:flex-row lg:pt-[10px]"
+              class="flex flex-col justify-between pb-3 lg:h-[clamp(300px,65vh,65vh)] lg:flex-row lg:pb-0 lg:pt-[10px]"
             >
               <div
-                class="mt-5 h-[450px] w-full overflow-hidden rounded-3xl border-2 border-main pl-6 text-white lg:mt-0 lg:h-full lg:w-[40%]"
+                class="mt-5 h-fit w-full overflow-hidden rounded-3xl border-2 border-main pb-8 pl-6 text-white lg:mt-0 lg:h-full lg:w-[40%]"
               >
                 <p
                   class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-bold text-main"
@@ -180,12 +178,25 @@ onMounted(() => {
                   {{ item.name }}
                 </p>
                 <p class="pr-[60px] text-[15px]">{{ item.description }}</p>
-                <ul class="mb-12 mt-[20px] list-disc pr-[85px] lg:mb-0">
+                <ul class="mt-[20px] list-disc pr-[85px]">
                   <li v-for="list in item.features.split(',')">{{ list }}</li>
                 </ul>
+                <div
+                  class="mt-8 flex items-center pr-[60px]"
+                  v-if="item.preview_link !== '-'"
+                >
+                  <nuxt-link
+                    :to="item.preview_link"
+                    external
+                    target="_blank"
+                    class="rounded-lg bg-main p-2 text-black"
+                  >
+                    پیش نمایش
+                  </nuxt-link>
+                </div>
               </div>
               <div
-                class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[220px] *:rounded-xl before:-left-[8px] before:-top-[5px] lg:mt-0 lg:h-full lg:w-[54%]"
+                class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[270px] *:rounded-xl before:-left-[8px] before:-top-[5px] before:hidden lg:mt-0 lg:h-full lg:w-[54%] lg:before:block"
               >
                 <img v-for="i in item.images" :src="i.image" />
               </div>
@@ -246,25 +257,9 @@ onMounted(() => {
                     تاریخ شروع پروژه
                   </p>
                 </div>
-                <div
-                  class="flex items-center"
-                  v-if="item.preview_link !== 'https://google.com'"
-                >
-                  <button
-                    class="h-[55px] rounded-lg bg-main p-2 text-black"
-                    @click="
-                      navigateTo(item.preview_link, {
-                        external: true,
-                        open: { target: '_blank' },
-                      })
-                    "
-                  >
-                    پیش نمایش
-                  </button>
-                </div>
               </div>
               <div
-                class="before relative mt-[30px] h-[120px] w-full before:-bottom-[2px] before:-right-[4px] before:z-[-1] before:bg-white lg:mt-0 lg:w-[55%]"
+                class="before relative mt-[30px] hidden h-[120px] w-full before:-bottom-[2px] before:-right-[4px] before:z-[-1] before:bg-white lg:mt-0 lg:block lg:w-[55%]"
               >
                 <img
                   src="/imgs/crasoul-banner.png"
@@ -276,58 +271,11 @@ onMounted(() => {
         </Swiper>
       </div>
     </section>
-    <!-- <section class="section">
-      <div class="section-container pt-[50px]">
-        <div
-          class="absolute -top-[25%] left-[-45%] z-0 hidden h-[80%] w-[80%] rotate-[-11deg] rounded-3xl bg-main lg:block"
-        />
-        <p class="mx-auto block w-[91%] text-[30px] font-bold text-main">
-          خدمات ما
-        </p>
-        <div v-if="false" class="mx-auto block w-[95%]">
-          <div class="skeleton h-[50vh]" />
-          <div class="skeleton mt-[5vh] h-[30vh]" />
-        </div>
-        <Swiper
-          v-else
-          :loop="true"
-          class="relative mx-auto block w-[92%]"
-          space-between="20"
-          :navigation="true"
-          :modules="[Navigation]"
-        >
-          <SwiperSlide v-for="item in crasoulData" :key="slide">
-            <div
-              class="flex flex-col justify-between pb-3 lg:h-[570px] lg:flex-row lg:pt-[10px]"
-            >
-              <div
-                class="mt-5 h-[450px] w-full overflow-hidden rounded-3xl border-2 border-main pl-6 text-white lg:mt-0 lg:h-full lg:w-[40%]"
-              >
-                <p
-                  class="mb-[20px] mt-[20px] pr-[30px] text-[40px] font-bold text-main"
-                >
-                  {{ item.title }}
-                </p>
-                <p class="pr-[60px] text-[15px]">{{ item.description }}</p>
-                <ul class="mb-12 mt-[20px] list-disc pr-[85px] lg:mb-0">
-                  <li v-for="list in item.notes">{{ list }}</li>
-                </ul>
-              </div>
-              <div
-                class="before ml-2 mt-12 flex h-[300px] w-[98%] justify-around rounded-3xl bg-white py-[10px] *:h-[97%] *:w-[30%] *:max-w-[220px] before:-left-[8px] before:-top-[5px] lg:mt-0 lg:h-full lg:w-[54%]"
-              >
-                <img :src="item.banner1" />
-                <img :src="item.banner2" />
-                <img :src="item.banner3" />
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </div>
-    </section> -->
     <section class="section">
-      <div class="section-container flex flex-col sm:flex-row">
-        <div class="z-[100] bg-secondary text-white sm:w-[34%]">
+      <div
+        class="section-container mt-10 flex !min-h-fit flex-col sm:flex-row lg:mt-0 lg:min-h-[100vh]"
+      >
+        <div class="z-[100] hidden bg-secondary text-white sm:w-[34%] lg:block">
           <p
             class="mb-[100px] mt-[100px] pr-[70px] text-[50px] font-bold sm:mb-[200px]"
           >
@@ -344,13 +292,28 @@ onMounted(() => {
             09376908446
           </p>
         </div>
-        <div class="relative sm:w-[66%]">
+        <div class="relative lg:w-[66%]">
           <div
             class="absolute left-[-12%] top-[-40%] z-[1] h-[80%] w-[80%] rotate-[-13deg] rounded-3xl bg-main"
           ></div>
           <img src="/imgs/footer.png" class="size-full" />
+          <div
+            class="absolute inset-0 z-[2] bg-black/45 pr-4 text-white lg:hidden"
+          >
+            <p class="mt-[5%] text-[50px] font-bold text-white sm:mb-[200px]">
+              ارتباط با ما
+            </p>
+            <p class="mb-[30px] mt-5 text-[24px] leading-[40px]">
+              گلستان،گرگان،بلوار شهید کلانتری، کارخانه نوآوری گرگان،طبقه
+              اول،واحد 405
+            </p>
+            <p class="mb-[50px] pl-[30px] text-end text-[20px] leading-[40px]">
+              info@moderndata.ir <br />
+              09376908446
+            </p>
+          </div>
         </div>
       </div>
     </section>
-  </full-page>
+  </div>
 </template>

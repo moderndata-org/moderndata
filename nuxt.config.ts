@@ -5,5 +5,17 @@ export default defineNuxtConfig({
     modules: ["@nuxtjs/tailwindcss", "@nuxtjs/mdc", "nuxt-headlessui"],
     headlessui: {
         prefix: ''
-    }
+    },
+    css:['/public/css/main.css'],
+    app: {
+        head: {
+          title: 'chatbot', // default fallback title
+          htmlAttrs: {
+            lang: 'en',
+          },
+          link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+          ]
+        }
+      }
 });

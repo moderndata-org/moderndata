@@ -18,13 +18,13 @@ body {
   @apply relative before:absolute before:h-[100%] before:w-[100%] before:rounded-3xl before:border-2 before:border-white;
 }
 .section-container {
-  @apply relative min-h-screen overflow-hidden bg-secondary lg:h-screen;
+  @apply relative min-h-screen overflow-hidden bg-secondary ;
 }
 .skeleton {
   @apply animate-pulse rounded-xl bg-gray-400/65;
 }
 .swiper-pagination {
-  @apply !-bottom-0 flex justify-center gap-2 lg:!bottom-0;
+  @apply !-bottom-0 flex justify-center gap-2 lg:!bottom-2;
 }
 .dot-navigation {
   @apply size-3.5 rounded-full bg-white shadow-lg;

@@ -64,6 +64,7 @@ onMounted(() => {
     }"
   </ul> -->
   <div ref="fullpage" id="fullpage">
+    <AiChat />
     <section class="section">
       <div class="section-container flex flex-col lg:flex-row">
         <div

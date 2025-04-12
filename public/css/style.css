@@ -52,7 +52,7 @@ body {
 /* swiper customization  */
 .swiper-button-prev,
 .swiper-button-next {
-    @apply !hidden !text-main lg:hidden;
+    @apply !hidden !text-main lg:!block;
 }
 .swiper-pagination {
     @apply !-bottom-0 flex justify-center gap-2 lg:!bottom-2;

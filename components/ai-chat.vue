@@ -87,14 +87,14 @@ onMounted(() => {
     <div dir="ltr">
         <div class="fixed bottom-4 z-[10000] w-full max-w-sm px-4">
             <Popover class="relative flex flex-col-reverse gap-3">
-                <div class="load-animation flex items-center gap-3">
-                    <PopoverButton class="group inline-flex size-20 items-center justify-center rounded-full bg-[#e7cd27]/80 hover:text-white focus:outline-none" @click="chatEvents">
+                <div class="load-animation flex items-center gap-1">
+                    <PopoverButton class="group inline-flex gap-2 h-16 px-3 items-center justify-center rounded-full bg-[#e7cd27]/80 focus:outline-none" @click="chatEvents">
                         <Icon icon="tabler:message-chatbot" class="size-14 text-black" />
+                        <p class="cursor-default">پشتیبانی مدرن دیتا</p>
                     </PopoverButton>
-                    <p class="cursor-default">پشتیبانی مدرن دیتا</p>
                 </div>
                 <transition enter-active-class="transition duration-200 ease-out" enter-from-class="translate-y-1 opacity-0" enter-to-class="translate-y-0 opacity-100" leave-active-class="transition duration-150 ease-in" leave-from-class="translate-y-0 opacity-100" leave-to-class="translate-y-1 opacity-0">
-                    <PopoverPanel v-slot="{ close }" class="absolute left-[180px] z-10 mb-24 flex min-h-[70svh] max-w-[350px] -translate-x-1/2 transform flex-col justify-between overflow-scroll rounded-lg bg-[url(/public/imgs/ai-chat-bg.png)] sm:px-0">
+                    <PopoverPanel v-slot="{ close }" class="absolute left-[180px] z-10 mb-20 flex min-h-[70svh] max-w-[350px] -translate-x-1/2 transform flex-col justify-between overflow-scroll rounded-lg bg-[url(/public/imgs/ai-chat-bg.png)] sm:px-0">
                         <div class="relative flex min-h-[70svh] w-full flex-col justify-between overflow-hidden">
                             <div class="relative z-50 h-12 w-full bg-[#e7cd27]">
                                 <div @click="close" class="m-3 flex size-7 items-center justify-center rounded-full bg-black/15">
@@ -127,7 +127,7 @@ onMounted(() => {
                                         <div class="mb-24 flex w-[330px] flex-col items-center px-6 text-center lg:w-[350px]">
                                             <p class="font-inter text-xl font-semibold tracking-tight lg:text-xl">👋 سلام! من مودو هستم</p>
                                             <p class="text-sm text-gray-500 lg:text-[12px]">اگر مایل باشید، می‌توانم اطلاعاتی درباره شرکت داده پردازان پارسیان نامی (مدرن دیتا)، در اختیار شما قرار دهم</p>
-                                            <p class="text-sm text-gray-500 lg:text-[12px]" style="direction: rtl">آیا مایل هستید درباره شرکت مدرن دیتا بیشتر بدانید یا سؤالی درباره خدمات آن دارید❓</p>
+                                            <p class="text-sm text-gray-500 lg:text-[12px]">آیا مایل هستید درباره شرکت مدرن دیتا بیشتر بدانید یا سؤالی درباره خدمات آن دارید ؟</p>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@ onMounted(() => {
                             </div>
                         </div>
                         <div class="absolute bottom-1 mx-auto mt-1 flex w-full justify-center text-xs text-black/30">
-                            <p>Modo قدرت گرفته از</p>
+                            <p><span class=" text-[rgb(92,70,121)] font-bold">Modo</span> قدرت گرفته از</p>
                         </div>
                     </PopoverPanel>
                 </transition>

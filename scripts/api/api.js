@@ -13,7 +13,7 @@ let askQuestionApi = async (question) => {
     });
     return res;
 };
-let chatHistory = async (unicId) => {
+let getChatHistory = async () => {
     let res = await $fetch(baseUrl + "/conversation/history", {
         headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -23,4 +23,4 @@ let chatHistory = async (unicId) => {
     return res;
 };
 
-export { chatHistory, askQuestionApi };
+export { getChatHistory, askQuestionApi };

@@ -1,5 +1,5 @@
 <template>
     <div>
-        <Mybutton text="aaaaaaa"></Mybutton>
+        <ChatBot></ChatBot>
     </div>
 </template>

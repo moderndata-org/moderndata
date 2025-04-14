@@ -27,7 +27,6 @@ let sendPrompt = () => {
                     sender: 0,
                     createdAt: new Date(),
                 });
-                console.log(prompt.value);
                 chatEvents();
                 sendButton.value = false;
                 loading.value = true;
@@ -36,14 +35,12 @@ let sendPrompt = () => {
 
                 chat.askQuestion(chat.messages[chat.messages.length - 1].content)
                     .then(async (res) => {
-                        console.log("test" + res);
 
                         chatEvents();
                         sendButton.value = true;
                         loading.value = false;
                     })
                     .catch((err) => {
-                        console.log("error" + err);
                         chat.messages.pop();
                         error.value = true;
                         sendButton.value = true;
@@ -106,7 +103,7 @@ onMounted(() => {
                                     <div ref="chatBox" v-show="startChating" class="absolute bottom-20 right-[-20px] h-fit max-h-full flex-col items-end overflow-y-auto px-8 pt-32 transition-all duration-200 ease-in-out">
                                         <div dir="rtl" v-for="HtmlMessage in chat.messages">
                                             <div v-if="HtmlMessage.sender == '0'" class="relative mt-3 flex min-h-16 w-fit min-w-16 max-w-[300px] shrink-0 items-center rounded-xl bg-[#ffe732]/60 px-4 py-4 pb-1">
-                                                <div class="mb-6" style="direction: rtl">
+                                                <div class="mb-6 text-[14px]" style="direction: rtl">
                                                     <div v-html="HtmlMessage.content"></div>
                                                 </div>
                                                 <div class="absolute bottom-0.5 right-4">
@@ -114,7 +111,7 @@ onMounted(() => {
                                                 </div>
                                             </div>
                                             <div v-else class="relative right-6 mt-3 flex min-h-16 w-fit min-w-16 max-w-[300px] shrink-0 items-center rounded-xl bg-white/60 px-4 py-4 pb-1">
-                                                <div class="mb-6" style="direction: rtl">
+                                                <div class="mb-6 text-[14px]" style="direction: rtl">
                                                     <div v-html="HtmlMessage.content"></div>
                                                 </div>
                                                 <div class="absolute bottom-0.5 right-4">

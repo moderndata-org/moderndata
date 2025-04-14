@@ -1,4 +1,4 @@
-let baseUrl = "http://192.168.4.208:4000";
+let baseUrl = "https://api.chatbot.moderndata.ir";
 
 let askQuestionApi = async (question) => {
     let res = await $fetch(baseUrl + "/conversation/ask-ai", {

@@ -6,7 +6,10 @@ export const chatStore = defineStore("chatStore", () => {
 
     let askQuestion = async (question) => {
         let res = await askQuestionApi(question);
-        messages.value.push(marked.parse(res.data));
+        messages.value.push({
+            ...res.data,
+            content: marked.parse(res.data.content),
+        });
     };
     let loadChatHistory = async (question) => {
         let res = await getChatHistory(question);

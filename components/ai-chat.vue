@@ -35,7 +35,6 @@ let sendPrompt = () => {
 
                 chat.askQuestion(chat.messages[chat.messages.length - 1].content)
                     .then(async (res) => {
-
                         chatEvents();
                         sendButton.value = true;
                         loading.value = false;
@@ -85,7 +84,7 @@ onMounted(() => {
         <div class="fixed bottom-4 z-[10000] w-full max-w-sm px-4">
             <Popover class="relative flex flex-col-reverse gap-3">
                 <div class="load-animation flex items-center gap-1">
-                    <PopoverButton class="group inline-flex gap-2 h-16 px-3 items-center justify-center rounded-full bg-[#e7cd27]/80 focus:outline-none" @click="chatEvents">
+                    <PopoverButton class="group inline-flex h-16 items-center justify-center gap-2 rounded-full bg-[#e7cd27]/80 px-3 focus:outline-none" @click="chatEvents">
                         <Icon icon="tabler:message-chatbot" class="size-14 text-black" />
                         <p class="cursor-default">پشتیبانی مدرن دیتا</p>
                     </PopoverButton>
@@ -144,7 +143,7 @@ onMounted(() => {
                             </div>
                         </div>
                         <div class="absolute bottom-1 mx-auto mt-1 flex w-full justify-center text-xs text-black/30">
-                            <p><span class=" text-[rgb(92,70,121)] font-bold">Modo</span> قدرت گرفته از</p>
+                            <p><span class="font-bold text-[rgb(92,70,121)]">Modo</span> قدرت گرفته از</p>
                         </div>
                     </PopoverPanel>
                 </transition>
